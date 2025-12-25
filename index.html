@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A2</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    body{
+      background: #0b0b0b;
+      color: #eaeaea;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 16px;
+    }
+
+    .wrap{
+      width: min(820px, 92vw);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .logo{
+      width: 120px;
+      max-width: 60vw;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .text{
+      color: #d8d8d8;
+      line-height: 1.55;
+      font-size: 16px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .text a{
+      color: #ff5901;
+      text-decoration: none;
+    }
+    .text a:hover{ text-decoration: underline; }
+
+    .links{
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .links a{
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      letter-spacing: 0.2px;
+      opacity: 0.9;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+
+    .links a:hover{
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .footer{
+      margin-top: 80px;
+      color: #bdbdbd;
+      opacity: 0.8;
+      font-size: 14px;
+    }
+
+    /* -------- Modal / Popup Contact Form -------- */
+    .modal-overlay{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 999;
+    }
+
+    .modal{
+      width: min(520px, 96vw);
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 18px;
+      text-align: left;
+    }
+
+    .modal-header{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .modal-title{
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: .2px;
+    }
+
+    .close-btn{
+      background: transparent;
+      border: 0;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: .8;
+    }
+    .close-btn:hover{ opacity: 1; }
+
+    .form-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .field{
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    label{
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    input, textarea{
+      width: 100%;
+      background: #0b0b0b;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 12px;
+      padding: 12px 12px;
+      color: #fff;
+      outline: none;
+      font-size: 14px;
+    }
+
+    input:focus, textarea:focus{
+      border-color: rgba(255,89,1,0.7);
+      box-shadow: 0 0 0 3px rgba(255,89,1,0.12);
+    }
+
+    textarea{
+      min-height: 110px;
+      resize: vertical;
+      grid-column: 1 / -1;
+    }
+
+    .actions{
+      display:flex;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-top: 12px;
+    }
+
+    .btn{
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 14px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
+      color: #fff;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+    .btn:hover{
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.22);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary{
+      border-color: rgba(255,89,1,0.55);
+      background: rgba(255,89,1,0.12);
+    }
+    .btn-primary:hover{
+      background: rgba(255,89,1,0.18);
+      border-color: rgba(255,89,1,0.8);
+    }
+
+    .modal-overlay.open{ display: flex; }
+
+    @media (max-width: 520px){
+      .form-grid{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <!-- LOGO -->
+    <img src="a2logo.svg" alt="A2 Logo" class="logo" />
+
+    <!-- TEXT -->
+    <p class="text">
+      We’re rebuilding our website to better reflect where we’re headed.<br>
+      In the meantime, we’re fully available, let’s talk at
+      <a id="gmailInlineLink" href="#" target="_blank" rel="noopener">contact@a2dw.com</a>
+    </p>
+
+    <!-- LINKS -->
+    <div class="links">
+      <!-- Opens the popup form -->
+      <a id="openContact" href="#">Contact us</a>
+
+      <a href="https://www.instagram.com/a2dw.co/" target="_blank" rel="noopener">
+        Portfolio
+      </a>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">© All rights reserved by A2DW.com</div>
+
+  </main>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal-overlay" id="contactModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Contact form">
+      <div class="modal-header">
+        <div class="modal-title">Contact A2DW</div>
+        <button class="close-btn" id="closeContact" aria-label="Close">×</button>
+      </div>
+
+      <form id="contactForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="firstName">First name</label>
+            <input id="firstName" name="firstName" type="text" required />
+          </div>
+
+          <div class="field">
+            <label for="lastName">Last name</label>
+            <input id="lastName" name="lastName" type="text" required />
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone number</label>
+            <input id="phone" name="phone" type="tel" placeholder="+389..." />
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+
+          <div class="field" style="grid-column: 1 / -1;">
+            <label for="message">Why do you want to contact us?</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn" id="cancelBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // ====== CONFIG (ndrysho këtu nëse don) ======
+    const TO_EMAIL = "contact@a2dw.com";
+    const DEFAULT_SUBJECT = "Contact A2DW";
+
+    function gmailComposeUrl({to, subject, body}) {
+      const base = "https://mail.google.com/mail/?view=cm&fs=1";
+      const params =
+        `&to=${encodeURIComponent(to)}` +
+        `&su=${encodeURIComponent(subject)}` +
+        `&body=${encodeURIComponent(body)}`;
+      return base + params;
+    }
+
+    // Set inline gmail link in text
+    const inline = document.getElementById("gmailInlineLink");
+    inline.href = gmailComposeUrl({
+      to: TO_EMAIL,
+      subject: DEFAULT_SUBJECT,
+      body: "Hi A2DW,%0A%0A"
+    });
+
+    // ====== Modal logic ======
+    const openBtn = document.getElementById("openContact");
+    const modal = document.getElementById("contactModal");
+    const closeBtn = document.getElementById("closeContact");
+    const cancelBtn = document.getElementById("cancelBtn");
+    const form = document.getElementById("contactForm");
+
+    function openModal(){
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.getElementById("firstName").focus();
+    }
+
+    function closeModal(){
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+    }
+
+    openBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openModal();
+    });
+
+    closeBtn.addEventListener("click", closeModal);
+    cancelBtn.addEventListener("click", closeModal);
+
+    modal.addEventListener("click", (e) => {
+      if(e.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if(e.key === "Escape" && modal.classList.contains("open")) closeModal();
+    });
+
+    // Submit -> opens Gmail Web with filled content
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const firstName = document.getElementById("firstName").value.trim();
+      const lastName  = document.getElementById("lastName").value.trim();
+      const phone     = document.getElementById("phone").value.trim();
+      const email     = document.getElementById("email").value.trim();
+      const message   = document.getElementById("message").value.trim();
+
+      const subject = DEFAULT_SUBJECT;
+
+      const body =
+        `Name: ${firstName} ${lastName}\n` +
+        `Phone: ${phone || "-"}\n` +
+        `Email: ${email}\n\n` +
+        `Message:\n${message}\n`;
+
+      const url = gmailComposeUrl({ to: TO_EMAIL, subject, body });
+
+      window.open(url, "_blank", "noopener");
+      closeModal();
+      form.reset();
+    });
+  </script>
+</body>
+</html>
+
