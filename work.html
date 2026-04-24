@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Work — A2 Digital World</title>
+<meta name="description" content="Selected case studies from A2 Digital World — businesses we've grown through ads, content and systems that sell." />
+<meta name="robots" content="index,follow" />
+<meta name="theme-color" content="#0a0a0a" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="A2 Digital World" />
+<meta property="og:title" content="Work — A2 Digital World" />
+<meta property="og:description" content="Selected case studies from A2 Digital World — businesses we've grown through ads, content and systems that sell." />
+<link rel="canonical" href="work.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #ffffff; --bg-soft: #f4f4f2;
+    --ink: #0a0a0a; --ink-soft: #5a5a5a;
+    --line: #e6e6e3; --radius: 14px; --maxw: 1240px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg); color: var(--ink); line-height: 1.5;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  body.no-scroll { overflow: hidden; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  .container { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between;
+    max-width: var(--maxw); margin: 0 auto; padding: 18px 24px; position: relative; }
+  .logo { display: inline-flex; align-items: center; flex-shrink: 0; }
+  .logo-mark { display: block; width: 160px; height: auto; }
+  .nav-links { display: flex; gap: 34px; }
+  .nav-links a { font-size: 14px; color: var(--ink-soft); transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 12px 22px; border-radius: 999px; font-size: 14px; font-weight: 500;
+    transition: all .25s ease; border: 1px solid transparent; cursor: pointer; font-family: inherit; }
+  .btn-primary { background: var(--ink); color: #fff; }
+  .btn-primary:hover { background: #333; transform: translateY(-1px); }
+  .btn-secondary { background: transparent; border-color: var(--line); color: var(--ink); }
+  .btn-secondary:hover { border-color: var(--ink); }
+  .btn .arrow { transition: transform .25s ease; }
+  .btn:hover .arrow { transform: translateX(3px); }
+  .burger { display:none; flex-direction: column; gap:5px; cursor:pointer; padding:8px;
+    background: transparent; border: 0; }
+  .burger span { width:24px; height:2px; background: var(--ink); }
+
+  /* HEADER */
+  .page-header {
+    padding: 160px 0 80px;
+    background: linear-gradient(180deg, #ffffff 0%, #f9f9f7 100%);
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow { font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--ink-soft); }
+  .page-title {
+    font-family: 'Instrument Serif', serif; font-weight: 400;
+    font-size: clamp(56px, 9vw, 128px); line-height: 0.95; letter-spacing: -2px; margin-bottom: 24px;
+  }
+  .page-title em { font-style: italic; color: var(--ink-soft); }
+  .page-sub { font-size: clamp(16px, 1.3vw, 19px); color: var(--ink-soft); max-width: 640px; }
+  .crumbs { font-size: 13px; color: var(--ink-soft); margin-bottom: 32px; display: flex; gap: 8px; }
+  .crumbs a:hover { color: var(--ink); }
+
+  /* WORK GRID */
+  .work-section { padding: 60px 0 120px; }
+  .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .work-card {
+    position: relative; border-radius: var(--radius); overflow: hidden;
+    aspect-ratio: 4 / 5; cursor: pointer; background: var(--bg-soft);
+    transition: transform .4s cubic-bezier(.2,.8,.2,1);
+  }
+  .work-card.wide { grid-column: span 2; aspect-ratio: 21 / 9; }
+  .work-card:hover { transform: translateY(-4px); }
+  .work-thumb { width: 100%; height: 100%; position: absolute; inset: 0;
+    transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+  .work-card:hover .work-thumb { transform: scale(1.04); }
+  .work-card-content {
+    position: absolute; inset: 0; padding: 36px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    color: #fff; z-index: 2;
+  }
+  .work-card-content.on-light { color: var(--ink); }
+  .work-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .work-cat { font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); }
+  .on-light .work-cat { background: rgba(0,0,0,0.08); border-color: rgba(0,0,0,0.1); color: var(--ink); }
+  .work-arrow-circle { width: 40px; height: 40px; border-radius: 50%;
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(255,255,255,0.2); transition: all .25s ease; }
+  .on-light .work-arrow-circle { background: rgba(0,0,0,0.08); border-color: rgba(0,0,0,0.1); color: var(--ink); }
+  .work-card:hover .work-arrow-circle { background: #fff; color: var(--ink); border-color: #fff; transform: rotate(-45deg); }
+  .work-result { font-family: 'Instrument Serif', serif; font-style: italic;
+    font-size: 14px; margin-bottom: 8px; opacity: 0.85; }
+  .work-title { font-family: 'Instrument Serif', serif; font-size: 34px;
+    letter-spacing: -0.3px; line-height: 1.05; }
+  .work-card.wide .work-title { font-size: 44px; }
+  .work-title em { font-style: italic; opacity: 0.7; }
+  .work-thumb-label { position: absolute; inset: 0; display: flex;
+    align-items: center; justify-content: center;
+    font-family: 'Instrument Serif', serif; font-size: 100px; letter-spacing: -3px;
+    font-style: italic; pointer-events: none; opacity: 0.18; }
+  .work-card.wide .work-thumb-label { font-size: 180px; }
+  .work-card.hidden { display: none; }
+
+  /* Thumbnails */
+  .thumb-travel { background: linear-gradient(165deg, #1a2f3f 0%, #0a0a0a 100%); }
+  .thumb-travel .work-thumb-label { color: #fff; }
+  .thumb-hair { background: linear-gradient(180deg, #d4c8b0 0%, #8a7f66 100%); }
+  .thumb-hair .work-thumb-label { color: var(--ink); }
+  .thumb-fashion {
+    background:
+      linear-gradient(180deg, rgba(22, 10, 15, 0.12) 0%, rgba(106, 16, 34, 0.76) 100%),
+      url('https://nalla.mk/cdn/shop/files/1_0b9ce947-1780-4d52-9e55-36f653f612b8.jpg?v=1766400494&width=1600') center/cover no-repeat,
+      linear-gradient(155deg, #cb2338 0%, #a81830 52%, #5f0d1c 100%);
+  }
+  .thumb-fashion .work-thumb-label { color: #fff; }
+  .thumb-5 { background: radial-gradient(circle at 70% 30%, #f2eee0 0%, #b5ad94 100%); }
+  .thumb-5 .work-thumb-label { color: var(--ink); }
+  .thumb-6 { background: linear-gradient(180deg, #0a0a0a 0%, #1f1f1f 60%, #404040 100%); }
+  .thumb-6 .work-thumb-label { color: #fff; }
+  .thumb-7 { background: conic-gradient(from 180deg at 50% 50%, #dcd5c0, #f5f1e8, #b5ad94, #dcd5c0); }
+  .thumb-7 .work-thumb-label { color: var(--ink); }
+  .thumb-8 { background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 50%, #2a2a2a 100%); }
+  .thumb-8 .work-thumb-label { color: #fff; }
+  .thumb-9 { background: radial-gradient(ellipse at top, #e8e2d0 0%, #8a8270 100%); }
+  .thumb-9 .work-thumb-label { color: var(--ink); }
+
+  /* FILTERS */
+  .filters {
+    display: flex; gap: 8px; flex-wrap: wrap; padding: 32px 0;
+    border-bottom: 1px solid var(--line);
+    position: sticky; top: 64px; z-index: 50;
+    background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
+    margin-bottom: 32px;
+  }
+  .filter-btn { padding: 10px 18px; border-radius: 999px;
+    border: 1px solid var(--line); background: transparent;
+    font-size: 13px; color: var(--ink-soft); cursor: pointer;
+    transition: all .2s ease; font-family: inherit; }
+  .filter-btn:hover { border-color: var(--ink); color: var(--ink); }
+  .filter-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .filter-count { font-size: 13px; color: var(--ink-soft); margin-left: auto; align-self: center; }
+
+  /* CASE STUDIES */
+  .case-studies { padding: 80px 0; border-top: 1px solid var(--line); background: var(--bg-soft); }
+  .case-studies .eyebrow { justify-content: center; margin-bottom: 20px; }
+  .case-studies h2 {
+    font-family: 'Instrument Serif', serif; font-weight: 400;
+    font-size: clamp(40px, 5.5vw, 72px); line-height: 1; letter-spacing: -1.5px;
+    text-align: center; margin-bottom: 16px;
+  }
+  .case-studies h2 em { font-style: italic; color: var(--ink-soft); }
+  .case-studies .lead { text-align: center; color: var(--ink-soft); max-width: 600px; margin: 0 auto 60px; font-size: 17px; }
+  .case { padding: 80px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 120px; }
+  .case:last-child { border-bottom: 0; }
+  .case-grid {
+    display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: center;
+  }
+  .case-thumb { aspect-ratio: 4 / 3; border-radius: var(--radius);
+    position: relative; overflow: hidden; }
+  .case-thumb .work-thumb-label { font-size: 120px; }
+  .case-cat { font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 16px; }
+  .case-title { font-family: 'Instrument Serif', serif; font-weight: 400;
+    font-size: clamp(36px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -1px; margin-bottom: 24px; }
+  .case-title em { font-style: italic; color: var(--ink-soft); }
+  .case-section { margin-bottom: 24px; }
+  .case-section h4 {
+    font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--ink); margin-bottom: 10px; font-weight: 600;
+  }
+  .case-section p { color: var(--ink-soft); font-size: 16px; line-height: 1.7; }
+  .case-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .case-tag { font-size: 12px; padding: 6px 12px; border-radius: 999px;
+    border: 1px solid var(--line); color: var(--ink-soft); background: #fff; }
+  .case.reverse .case-grid { direction: rtl; }
+  .case.reverse .case-grid > * { direction: ltr; }
+
+  /* CTA */
+  .cta-section { padding: 80px 0; }
+  .cta { background: var(--ink); color: #fff; border-radius: 24px; margin: 0 24px;
+    padding: 100px 40px; text-align: center; }
+  .cta h2 { font-family: 'Instrument Serif', serif; font-weight: 400;
+    font-size: clamp(40px, 7vw, 88px); line-height: 0.95; letter-spacing: -2px; }
+  .cta h2 em { font-style: italic; color: #888; }
+  .cta p { color: #a0a0a0; margin: 20px auto 32px; max-width: 500px; font-size: 17px; }
+  .cta .btn-primary { background: #fff; color: var(--ink); padding: 16px 32px; font-size: 15px; }
+  .cta .btn-primary:hover { background: #eaeaea; }
+
+  /* FOOTER */
+  footer { padding: 100px 0 40px; background: var(--bg); }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+    padding-bottom: 72px; border-bottom: 1px solid var(--line); }
+  .footer-brand .logo { margin-bottom: 20px; }
+  .footer-brand .logo-mark { width: 220px; }
+  .footer-brand p { color: var(--ink-soft); max-width: 340px; font-size: 14px; }
+  .footer-col h4 { font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 20px; font-weight: 500; }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 12px; }
+  .footer-col a { font-size: 14px; color: var(--ink); transition: opacity .2s; cursor: pointer; }
+  .footer-col a:hover { opacity: 0.6; }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center;
+    padding-top: 32px; font-size: 13px; color: var(--ink-soft); }
+  .footer-bottom .socials { display: flex; gap: 18px; }
+  .footer-wordmark { font-family: 'Instrument Serif', serif;
+    font-size: clamp(80px, 20vw, 260px); line-height: 0.8; letter-spacing: -8px;
+    text-align: center; padding: 60px 0 20px; color: var(--ink); }
+  .footer-wordmark em { font-style: italic; color: var(--ink-soft); }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(30px); transition: all .8s cubic-bezier(.2,.8,.2,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* MODAL */
+  .modal-backdrop { position: fixed; inset: 0; z-index: 200;
+    background: rgba(10,10,10,0.6); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px; opacity: 0; pointer-events: none; transition: opacity .25s ease; }
+  .modal-backdrop.active { opacity: 1; pointer-events: auto; }
+  .modal { background: #fff; border-radius: 24px; width: 100%; max-width: 580px;
+    max-height: 92vh; overflow-y: auto; position: relative;
+    transform: translateY(30px) scale(.98); transition: transform .35s cubic-bezier(.2,.8,.2,1);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.3); }
+  .modal-backdrop.active .modal { transform: translateY(0) scale(1); }
+  .modal-inner { padding: 48px 44px; }
+  .modal-close { position: absolute; top: 18px; right: 18px;
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--bg-soft); border: 0;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 20px; color: var(--ink); transition: background .2s; z-index: 2; }
+  .modal-close:hover { background: #e6e6e3; }
+  .modal h3 { font-family: 'Instrument Serif', serif; font-weight: 400;
+    font-size: 40px; line-height: 1.05; letter-spacing: -1px; margin-bottom: 12px; }
+  .modal h3 em { font-style: italic; color: var(--ink-soft); }
+  .modal .lead { color: var(--ink-soft); font-size: 15px; margin-bottom: 28px; text-align: left; max-width: none; }
+  .form-field { margin-bottom: 16px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .form-field label { font-size: 12px; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 8px; display: block; }
+  .form-field input, .form-field select, .form-field textarea {
+    width: 100%; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px;
+    background: var(--bg-soft); font-family: inherit; font-size: 15px; color: var(--ink); transition: all .2s; }
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+    outline: none; border-color: var(--ink); background: #fff; }
+  .form-field textarea { resize: vertical; min-height: 100px; }
+  .form-field select { appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235a5a5a' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 16px center; padding-right: 44px; }
+  .form-submit { width: 100%; padding: 16px; background: var(--ink); color: #fff;
+    border: 0; border-radius: 12px; font-family: inherit; font-size: 15px; font-weight: 500;
+    cursor: pointer; transition: background .2s; margin-top: 8px;
+    display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .form-submit:hover { background: #333; }
+  .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+  .form-note { font-size: 12px; color: var(--ink-soft); text-align: center; margin-top: 16px; }
+  .modal-success { display: none; text-align: center; padding: 20px 0; }
+  .modal-success.show { display: block; }
+  .modal-success .check { width: 64px; height: 64px; border-radius: 50%;
+    background: #e4f2e8; color: #1a6b3a;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px; margin: 0 auto 20px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .nav-links.is-open {
+      display: flex; flex-direction: column; gap: 18px;
+      position: absolute; top: calc(100% + 1px); left: 0; right: 0;
+      background: #fff; padding: 24px;
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 20px 40px rgba(10,10,10,0.08);
+    }
+    .burger { display: flex; }
+    .nav-inner .btn { display: none; }
+    .work-grid { grid-template-columns: 1fr; }
+    .work-card.wide { grid-column: auto; aspect-ratio: 4 / 5; }
+    .case-grid { grid-template-columns: 1fr; gap: 32px; }
+    .case.reverse .case-grid { direction: ltr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .cta { padding: 60px 24px; margin: 0 12px; }
+    .page-header { padding: 120px 0 60px; }
+    .filters { position: relative; top: 0; }
+    .modal-inner { padding: 36px 28px; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .footer-top { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 16px; }
+    .logo-mark { width: 132px; }
+    .footer-brand .logo-mark { width: 188px; }
+    .page-title { font-size: 44px; letter-spacing: -1px; }
+    .page-sub { font-size: 15px; }
+    .work-card-content { padding: 24px; }
+    .work-title, .work-card.wide .work-title { font-size: 22px; }
+    .work-result { font-size: 12px; }
+    .work-thumb-label, .work-card.wide .work-thumb-label { font-size: 72px; }
+    .case-title { font-size: 32px; }
+    .filter-count { width: 100%; margin-left: 0; }
+    .cta h2 { font-size: 44px; letter-spacing: -1px; }
+    .footer-wordmark { font-size: 72px; letter-spacing: -4px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="A2 Digital World home">
+      <img class="logo-mark" src="assets/a2dw-logo.svg" alt="A2 Digital World" />
+    </a>
+    <div class="nav-links">
+      <a href="index.html#services">Services</a>
+      <a href="work.html" class="active">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#faq">FAQ</a>
+    </div>
+    <button type="button" class="btn btn-primary" data-open-modal>Get your free offer <span class="arrow">→</span></button>
+    <button type="button" class="burger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="container">
+    <div class="crumbs reveal">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span>Work</span>
+    </div>
+    <div class="eyebrow reveal">Case studies &amp; selected work</div>
+    <h1 class="page-title reveal">Don't take our word —<br>look at the <em>numbers.</em></h1>
+    <p class="page-sub reveal">50+ businesses grown. A running archive of projects we've shipped — brands we rebuilt, campaigns we scaled, and content that actually drove revenue. Filter by discipline, or scroll for the full picture.</p>
+  </div>
+</header>
+
+<!-- WORK GRID -->
+<section class="work-section">
+  <div class="container">
+    <div class="filters reveal" id="filters">
+      <button class="filter-btn active" data-filter="all">All work</button>
+      <button class="filter-btn" data-filter="ads">Meta &amp; Google Ads</button>
+      <button class="filter-btn" data-filter="content">Content</button>
+      <button class="filter-btn" data-filter="brand">Branding</button>
+      <button class="filter-btn" data-filter="web">Web &amp; Systems</button>
+      <span class="filter-count" id="filterCount">8 projects</span>
+    </div>
+
+    <div class="work-grid" id="workGrid">
+
+      <a href="#mond-travel" class="work-card wide reveal" data-tags="ads content web">
+        <div class="work-thumb thumb-travel"></div>
+        <div class="work-thumb-label">Mond</div>
+        <div class="work-card-content">
+          <div class="work-top">
+            <span class="work-cat">Featured · Travel · Ads</span>
+            <div class="work-arrow-circle">↗</div>
+          </div>
+          <div>
+            <div class="work-result">From 0 online sales → consistent bookings</div>
+            <div class="work-title">Mond Travel — <em>booking engine built from zero</em></div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#master-hair" class="work-card reveal" data-tags="content">
+        <div class="work-thumb thumb-hair"></div>
+        <div class="work-thumb-label">Master</div>
+        <div class="work-card-content on-light">
+          <div class="work-top">
+            <span class="work-cat">Content · Social</span>
+            <div class="work-arrow-circle">↗</div>
+          </div>
+          <div>
+            <div class="work-result">Word-of-mouth → digital pipeline</div>
+            <div class="work-title">Master Hair — <em>clinic turned content brand</em></div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#nalla" class="work-card reveal" data-tags="brand web content">
+        <div class="work-thumb thumb-fashion"></div>
+        <div class="work-thumb-label">Nalla</div>
+        <div class="work-card-content">
+          <div class="work-top">
+            <span class="work-cat">Branding · Website · Social</span>
+            <div class="work-arrow-circle">↗</div>
+          </div>
+          <div>
+            <div class="work-result">Scattered touchpoints → one cohesive digital storefront</div>
+            <div class="work-title">Nalla.mk — <em>brand, shop and social in sync</em></div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#local-cafe" class="work-card reveal" data-tags="content brand">
+        <div class="work-thumb thumb-5"></div>
+        <div class="work-thumb-label">Café</div>
+        <div class="work-card-content on-light">
+          <div class="work-top">
+            <span class="work-cat">Hospitality · Brand</span>
+            <div class="work-arrow-circle">↗</div>
+          </div>
+          <div>
+            <div class="work-result">New identity + 2×/week reels</div>
+            <div class="work-title">Local Café — <em>a neighborhood icon online</em></div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#fit-studio" class="work-card reveal" data-tags="ads web">
+        <div class="work-thumb thumb-6"></div>
+        <div class="work-thumb-label">Fit.</div>
+        <div class="work-card-content">
+          <div class="work-top">
+            <span class="work-cat">Fitness · Funnel</span>
+            <div class="work-arrow-circle">↗</div>
+          </div>
+          <div>
+            <div class="work-result">Landing + Meta Ads → trial fill rate 78%</div>
+            <div class="work-title">Fit Studio — <em>membership funnel launch</em></div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#dental-plus" class="work-card reveal" data-tags="content ads">
+        <div class="work-thumb thumb-7"></div>
+        <div class="work-thumb-label">Dental+</div>
+        <div class="work-card-content on-light">
+          <div class="work-top">
+            <span class="work-cat">Healthcare · Local Ads</span>
+            <div class="work-arrow-circle">↗</div>
+          </div>
+          <div>
+            <div class="work-result">Local Meta Ads + booking flow</div>
+            <div class="work-title">Dental+ — <em>appointments on autopilot</em></div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#restro" class="work-card reveal" data-tags="brand web">
+        <div class="work-thumb thumb-8"></div>
+        <div class="work-thumb-label">Restro</div>
+        <div class="work-card-content">
+          <div class="work-top">
+            <span class="work-cat">Restaurant · Brand + Web</span>
+            <div class="work-arrow-circle">↗</div>
+          </div>
+          <div>
+            <div class="work-result">Identity + reservation site</div>
+            <div class="work-title">Restro — <em>restaurant rebrand</em></div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#beauty-lab" class="work-card reveal" data-tags="content ads">
+        <div class="work-thumb thumb-9"></div>
+        <div class="work-thumb-label">Beauty</div>
+        <div class="work-card-content on-light">
+          <div class="work-top">
+            <span class="work-cat">Beauty · Content</span>
+            <div class="work-arrow-circle">↗</div>
+          </div>
+          <div>
+            <div class="work-result">Reels strategy + creator content</div>
+            <div class="work-title">Beauty Lab — <em>launch that sold out stock</em></div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="case-studies">
+  <div class="container">
+    <div class="eyebrow reveal">The real stories</div>
+    <h2 class="reveal">The details <em>behind</em> the work.</h2>
+    <p class="lead reveal">Three businesses we grew from scratch — what they came with, what we built, and what changed.</p>
+
+    <!-- MOND TRAVEL -->
+    <div class="case reveal" id="mond-travel">
+      <div class="case-grid">
+        <div class="case-thumb thumb-travel"><div class="work-thumb-label">Mond</div></div>
+        <div>
+          <div class="case-cat">Travel Agency · Meta Ads · 2024</div>
+          <h3 class="case-title">Mond Travel — <em>booking engine built from zero</em></h3>
+
+          <div class="case-section">
+            <h4>The challenge</h4>
+            <p>A solid travel product but online sales were nearly zero. Ad budget went out the door with no measurable result — just impressions and a handful of inquiries that never converted.</p>
+          </div>
+          <div class="case-section">
+            <h4>What we built</h4>
+            <p>A 2×/day content system feeding targeted Meta Ads, paired with an interactive HTML landing page featuring live countdowns on each package. Every post, every ad, every story ended in the same place — a clear CTA to book.</p>
+          </div>
+
+          <div class="case-tags">
+            <span class="case-tag">Meta Ads</span>
+            <span class="case-tag">Content system</span>
+            <span class="case-tag">Landing page</span>
+            <span class="case-tag">Retargeting</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MASTER HAIR -->
+    <div class="case reverse reveal" id="master-hair">
+      <div class="case-grid">
+        <div class="case-thumb thumb-hair"><div class="work-thumb-label">Master</div></div>
+        <div>
+          <div class="case-cat">Hair Clinic · Content &amp; Social · 2024</div>
+          <h3 class="case-title">Master Hair — <em>clinic turned content brand</em></h3>
+
+          <div class="case-section">
+            <h4>The challenge</h4>
+            <p>A quality clinic with a loyal client base but zero digital presence. New clients came exclusively through word-of-mouth referrals — growth was real but slow and unpredictable.</p>
+          </div>
+          <div class="case-section">
+            <h4>What we built</h4>
+            <p>A full content strategy with three pillars: educational posts to build authority, before/after testimonials for proof, and emotional Reels to trigger action. On top of it, a funnel built to convert a follower into a booked appointment.</p>
+          </div>
+
+          <div class="case-tags">
+            <span class="case-tag">Content strategy</span>
+            <span class="case-tag">Reels</span>
+            <span class="case-tag">Testimonials</span>
+            <span class="case-tag">Booking funnel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NALLA.MK -->
+    <div class="case reveal" id="nalla">
+      <div class="case-grid">
+        <div class="case-thumb thumb-fashion"><div class="work-thumb-label">Nalla</div></div>
+        <div>
+          <div class="case-cat">Branding · Website · Social Media · 2024</div>
+          <h3 class="case-title">Nalla.mk — <em>brand, shop and social aligned</em></h3>
+
+          <div class="case-section">
+            <h4>The challenge</h4>
+            <p>Nalla had a recognizable mark and a strong product range, but the brand, website and day-to-day social presence needed to feel like one system. The digital storefront had to present categories more clearly and make the shopping experience feel more polished from first impression to product page.</p>
+          </div>
+          <div class="case-section">
+            <h4>What we built</h4>
+            <p>We shaped a cleaner digital direction around the existing Nalla identity, the red-and-soft-pink palette, and a website experience that better frames the offer across women, men, pajamas, hosiery and KOTA collections. On top of that, we aligned social media output with the storefront so the brand looked consistent whether someone discovered Nalla on Instagram or landed directly on nalla.mk.</p>
+          </div>
+          <div class="case-section">
+            <h4>The result</h4>
+            <p>Nalla started reading as one cohesive brand instead of separate pieces. The store feels clearer, the presentation feels more premium, and the social presence now supports the same visual direction as the website.</p>
+          </div>
+
+          <div class="case-tags">
+            <span class="case-tag">Brand direction</span>
+            <span class="case-tag">Website styling</span>
+            <span class="case-tag">Social media direction</span>
+            <a class="case-tag" href="https://nalla.mk/" target="_blank" rel="noopener noreferrer">nalla.mk</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other placeholder cases (short) -->
+    <div class="case reverse reveal" id="local-cafe">
+      <div class="case-grid">
+        <div class="case-thumb thumb-5"><div class="work-thumb-label">Café</div></div>
+        <div>
+          <div class="case-cat">Hospitality · Brand &amp; Content · 2023</div>
+          <h3 class="case-title">Local Café — <em>a neighborhood icon online</em></h3>
+          <div class="case-section">
+            <h4>In short</h4>
+            <p>Fresh visual identity + 2×/week Reels cadence turned a local café into a booked-out weekend destination. Queue on Saturdays. That's the report.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case reveal" id="fit-studio">
+      <div class="case-grid">
+        <div class="case-thumb thumb-6"><div class="work-thumb-label">Fit.</div></div>
+        <div>
+          <div class="case-cat">Fitness · Funnel · 2024</div>
+          <h3 class="case-title">Fit Studio — <em>membership funnel launch</em></h3>
+          <div class="case-section">
+            <h4>In short</h4>
+            <p>Landing page + Meta Ads + trial conversion flow — 78% trial fill rate in the first 30 days. Pipeline full through Q2.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case reverse reveal" id="dental-plus">
+      <div class="case-grid">
+        <div class="case-thumb thumb-7"><div class="work-thumb-label">Dental+</div></div>
+        <div>
+          <div class="case-cat">Healthcare · Local Ads · 2024</div>
+          <h3 class="case-title">Dental+ — <em>appointments on autopilot</em></h3>
+          <div class="case-section">
+            <h4>In short</h4>
+            <p>We paired local Meta Ads with a simpler booking path and testimonial-led creative. The result was a steadier appointment flow without relying only on walk-ins or referrals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case reveal" id="restro">
+      <div class="case-grid">
+        <div class="case-thumb thumb-8"><div class="work-thumb-label">Restro</div></div>
+        <div>
+          <div class="case-cat">Restaurant · Brand + Web · 2023</div>
+          <h3 class="case-title">Restro — <em>restaurant rebrand</em></h3>
+          <div class="case-section">
+            <h4>In short</h4>
+            <p>A sharper identity, a cleaner reservation site, and launch content that matched the new positioning. The brand felt premium again, and bookings had a clearer online path.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case reverse reveal" id="beauty-lab">
+      <div class="case-grid">
+        <div class="case-thumb thumb-9"><div class="work-thumb-label">Beauty</div></div>
+        <div>
+          <div class="case-cat">Beauty · Content + Ads · 2024</div>
+          <h3 class="case-title">Beauty Lab — <em>launch that sold out stock</em></h3>
+          <div class="case-section">
+            <h4>In short</h4>
+            <p>We combined creator-style Reels with fast retargeting ads to turn launch attention into immediate sales. The first campaign wave moved inventory before the second content batch even went live.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta reveal">
+    <h2>Your project<br>could be <em>next.</em></h2>
+    <p>15 minutes — and we'll tell you exactly what's costing you sales every day and how to fix it. Free, no commitment.</p>
+    <button type="button" class="btn btn-primary" data-open-modal>Get your free offer <span class="arrow">→</span></button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" aria-label="A2 Digital World home">
+          <img class="logo-mark" src="assets/a2dw-logo.svg" alt="A2 Digital World" />
+        </a>
+        <p>A2 Digital World — ads that sell, results that show. Built in Skopje, working with businesses across the region.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="index.html#services">Meta &amp; Google Ads</a></li>
+          <li><a href="index.html#services">Marketing Systems</a></li>
+          <li><a href="index.html#services">Content</a></li>
+          <li><a href="index.html#services">Branding</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="index.html#process">Process</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@a2dw.com">info@a2dw.com</a></li>
+          <li><a href="index.html#contact">Book a consultation</a></li>
+          <li><a data-open-modal>Get a free offer</a></li>
+          <li><a href="index.html#faq">Common questions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-wordmark">A2<em>DW</em></div>
+    <div class="footer-bottom">
+      <div>© 2026 A2 Digital World. All rights reserved.</div>
+      <div class="socials">
+        <a href="mailto:info@a2dw.com">Email</a>
+        <a href="https://www.instagram.com/a2dw.co/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="work.html">Portfolio</a>
+        <a data-open-modal>Book a call</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+    <div class="modal-inner">
+
+      <div class="modal-form" id="modalForm">
+        <h3>Get your <em>free offer.</em></h3>
+        <p class="lead">15 minutes — and we'll tell you exactly what's costing you sales every day and how to fix it. Free, no commitment.</p>
+
+        <form id="offerForm" autocomplete="on">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" required placeholder="Jane Doe" />
+            </div>
+            <div class="form-field">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" required placeholder="you@company.com" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="phone">Phone number</label>
+              <input id="phone" name="phone" type="tel" placeholder="+389 ..." />
+            </div>
+            <div class="form-field">
+              <label for="business">Business name</label>
+              <input id="business" name="business" type="text" required placeholder="Your business" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="service">Which service?</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="Meta & Google Ads">Meta &amp; Google Ads</option>
+                <option value="Marketing System">Marketing System (funnels, automations)</option>
+                <option value="Content">Content (reels, stories, posts)</option>
+                <option value="Branding">Branding &amp; Design</option>
+                <option value="Full package">Full package — I need everything</option>
+                <option value="Not sure">Not sure yet — help me decide</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="budget">Monthly ad budget (€)</label>
+              <select id="budget" name="budget" required>
+                <option value="">Select a range</option>
+                <option value="0-500">€0 – €500</option>
+                <option value="500-1500">€500 – €1,500</option>
+                <option value="1500-5000">€1,500 – €5,000</option>
+                <option value="5000+">€5,000+</option>
+                <option value="No budget yet">Not sure / no budget yet</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="message">How can we help you?</label>
+            <textarea id="message" name="message" required placeholder="Tell us about your business, your goals, and what you've tried so far."></textarea>
+          </div>
+
+          <input type="hidden" name="_subject" value="New inquiry from A2DW website" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" style="display:none" />
+
+          <button type="submit" class="form-submit" id="formSubmit">
+            Send — we reply within 2 hours
+          </button>
+          <p class="form-note">By submitting, you agree to be contacted by A2DW. We never share your info.</p>
+        </form>
+      </div>
+
+      <div class="modal-success" id="modalSuccess">
+        <div class="check">✓</div>
+        <h3 style="text-align:center;">Your message is <em>on the way.</em></h3>
+        <p class="lead" style="text-align:center;">We'll reply within 2 hours during business hours. Talk soon.</p>
+        <button class="form-submit" id="successClose" style="margin-top: 24px;">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  // Reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Filter
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('#workGrid .work-card');
+  const countEl = document.getElementById('filterCount');
+  countEl.textContent = cards.length + ' projects';
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      let count = 0;
+      cards.forEach(card => {
+        const tags = (card.dataset.tags || '').split(' ');
+        const show = filter === 'all' || tags.includes(filter);
+        card.classList.toggle('hidden', !show);
+        if (show) count++;
+      });
+      countEl.textContent = count + ' project' + (count === 1 ? '' : 's');
+    });
+  });
+
+  // Mobile menu
+  const burger = document.querySelector('.burger');
+  const links = document.querySelector('.nav-links');
+  if (burger && links) {
+    const closeMenu = () => {
+      links.classList.remove('is-open');
+      burger.setAttribute('aria-expanded', 'false');
+    };
+    burger.addEventListener('click', () => {
+      const isOpen = links.classList.toggle('is-open');
+      burger.setAttribute('aria-expanded', String(isOpen));
+    });
+    links.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('click', (e) => {
+      if (window.innerWidth > 900) return;
+      if (!links.classList.contains('is-open')) return;
+      if (links.contains(e.target) || burger.contains(e.target)) return;
+      closeMenu();
+    });
+  }
+
+  // MODAL
+  const modalBackdrop = document.getElementById('modalBackdrop');
+  const modalClose = document.getElementById('modalClose');
+  const modalForm = document.getElementById('modalForm');
+  const modalSuccess = document.getElementById('modalSuccess');
+  const offerForm = document.getElementById('offerForm');
+  const formSubmit = document.getElementById('formSubmit');
+  const successClose = document.getElementById('successClose');
+
+  function openModal() {
+    modalBackdrop.classList.add('active');
+    document.body.classList.add('no-scroll');
+    modalForm.style.display = 'block';
+    modalSuccess.classList.remove('show');
+    setTimeout(() => {
+      const first = offerForm.querySelector('input, select, textarea');
+      if (first) first.focus();
+    }, 300);
+  }
+  function closeModal() {
+    modalBackdrop.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+  }
+
+  document.querySelectorAll('[data-open-modal]').forEach(el => {
+    el.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+    el.style.cursor = 'pointer';
+  });
+  modalClose.addEventListener('click', closeModal);
+  successClose.addEventListener('click', closeModal);
+  modalBackdrop.addEventListener('click', (e) => { if (e.target === modalBackdrop) closeModal(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalBackdrop.classList.contains('active')) closeModal();
+  });
+
+  offerForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    formSubmit.disabled = true;
+    formSubmit.textContent = 'Sending...';
+    const formData = new FormData(offerForm);
+    const payload = {};
+    formData.forEach((v, k) => payload[k] = v);
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/info@a2dw.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (res.ok) {
+        modalForm.style.display = 'none';
+        modalSuccess.classList.add('show');
+        offerForm.reset();
+      } else {
+        fallbackMailto(payload);
+      }
+    } catch (err) {
+      fallbackMailto(payload);
+    } finally {
+      formSubmit.disabled = false;
+      formSubmit.innerHTML = 'Send — we reply within 2 hours';
+    }
+  });
+  function fallbackMailto(p) {
+    const body = encodeURIComponent(
+      `Name: ${p.name || ''}\nEmail: ${p.email || ''}\nPhone: ${p.phone || ''}\nBusiness: ${p.business || ''}\nService: ${p.service || ''}\nBudget: ${p.budget || ''}\n\nMessage:\n${p.message || ''}`
+    );
+    const subject = encodeURIComponent('New inquiry from A2DW website');
+    window.location.href = `mailto:info@a2dw.com?subject=${subject}&body=${body}`;
+  }
+</script>
+</body>
+</html>
