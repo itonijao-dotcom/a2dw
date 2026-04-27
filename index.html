@@ -222,6 +222,25 @@
     margin-bottom: 56px; gap: 40px; flex-wrap: wrap;
   }
   .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .work-empty {
+    padding: clamp(32px, 5vw, 56px);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, #f8f3ee 0%, #fff 100%);
+  }
+  .work-empty-kicker {
+    font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 16px;
+  }
+  .work-empty h3 {
+    font-family: 'Instrument Serif', serif; font-weight: 400;
+    font-size: clamp(32px, 4vw, 48px); line-height: 1.05;
+    letter-spacing: -1px; margin-bottom: 16px;
+  }
+  .work-empty p {
+    max-width: 620px; color: var(--ink-soft);
+    font-size: 17px; line-height: 1.7;
+  }
   .work-card {
     position: relative; border-radius: var(--radius); overflow: hidden;
     aspect-ratio: 4 / 5; cursor: pointer; background: var(--bg-soft);
@@ -691,61 +710,15 @@
     <div class="work-head reveal">
       <div>
         <div class="eyebrow">Case studies</div>
-        <h2 class="section-title">Don't take our word —<br><em>look at the numbers.</em></h2>
-        <p class="section-sub">50+ businesses grown. Here are three of them.</p>
+        <h2 class="section-title">New projects are being<br><em>prepared right now.</em></h2>
+        <p class="section-sub">This section stays ready so new case studies can be added as soon as they are approved.</p>
       </div>
-      <a href="work.html" class="btn btn-secondary">See all projects <span class="arrow">→</span></a>
     </div>
 
-    <div class="work-grid">
-      <a href="work.html#mond-travel" class="work-card reveal">
-        <div class="work-thumb thumb-travel"></div>
-        <div class="work-thumb-label">Mond</div>
-        <div class="work-card-content">
-          <div class="work-top">
-            <span class="work-cat">Travel · Ads</span>
-            <div class="work-arrow-circle">↗</div>
-          </div>
-          <div>
-            <div class="work-result">Online sales 0 → consistent bookings</div>
-            <div class="work-title">Mond Travel — <em>booking engine built from zero</em></div>
-          </div>
-        </div>
-      </a>
-
-      <a href="work.html#master-hair" class="work-card reveal">
-        <div class="work-thumb thumb-hair"></div>
-        <div class="work-thumb-label">Master</div>
-        <div class="work-card-content on-light">
-          <div class="work-top">
-            <span class="work-cat">Content · Social</span>
-            <div class="work-arrow-circle">↗</div>
-          </div>
-          <div>
-            <div class="work-result">Word-of-mouth → digital pipeline</div>
-            <div class="work-title">Master Hair — <em>clinic turned content brand</em></div>
-          </div>
-        </div>
-      </a>
-
-      <a href="work.html#nalla" class="work-card reveal">
-        <div class="work-thumb thumb-fashion"></div>
-        <div class="work-thumb-label">Nalla</div>
-        <div class="work-card-content">
-          <div class="work-top">
-            <span class="work-cat">Branding · Web</span>
-            <div class="work-arrow-circle">↗</div>
-          </div>
-          <div>
-            <div class="work-result">Scattered touchpoints → one cohesive digital storefront</div>
-            <div class="work-title">Nalla.mk — <em>brand, shop and social in sync</em></div>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div style="text-align: center; margin-top: 56px;" class="reveal">
-      <a href="work.html" class="btn btn-primary">See the full portfolio <span class="arrow">→</span></a>
+    <div class="work-empty reveal">
+      <div class="work-empty-kicker">Portfolio update in progress</div>
+      <h3>Projects will appear here soon.</h3>
+      <p>The section is ready for your real case studies, screenshots and results. Once you have them, they can be dropped in here without rebuilding the rest of the site.</p>
     </div>
   </div>
 </section>

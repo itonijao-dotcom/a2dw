@@ -120,6 +120,28 @@
     font-style: italic; pointer-events: none; opacity: 0.18; }
   .work-card.wide .work-thumb-label { font-size: 180px; }
   .work-card.hidden { display: none; }
+  .work-empty {
+    padding: clamp(36px, 5vw, 64px);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: #fff;
+  }
+  .work-empty.soft { background: rgba(255,255,255,0.8); }
+  .work-empty-kicker {
+    font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 16px;
+  }
+  .work-empty h2,
+  .work-empty h3 {
+    font-family: 'Instrument Serif', serif; font-weight: 400;
+    line-height: 1.05; letter-spacing: -1px; margin-bottom: 16px;
+  }
+  .work-empty h2 { font-size: clamp(40px, 5vw, 64px); }
+  .work-empty h3 { font-size: clamp(30px, 4vw, 44px); }
+  .work-empty p {
+    max-width: 700px; color: var(--ink-soft);
+    font-size: 17px; line-height: 1.7;
+  }
 
   /* Thumbnails */
   .thumb-travel { background: linear-gradient(165deg, #1a2f3f 0%, #0a0a0a 100%); }
@@ -351,146 +373,19 @@
       <span>/</span>
       <span>Work</span>
     </div>
-    <div class="eyebrow reveal">Case studies &amp; selected work</div>
-    <h1 class="page-title reveal">Don't take our word —<br>look at the <em>numbers.</em></h1>
-    <p class="page-sub reveal">50+ businesses grown. A running archive of projects we've shipped — brands we rebuilt, campaigns we scaled, and content that actually drove revenue. Filter by discipline, or scroll for the full picture.</p>
+    <div class="eyebrow reveal">Portfolio</div>
+    <h1 class="page-title reveal">The next case studies<br>are coming <em>soon.</em></h1>
+    <p class="page-sub reveal">This page is kept ready for your real projects only. When the materials are finalized, the cards, visuals and detailed breakdowns can be added here without redesigning the page.</p>
   </div>
 </header>
 
 <!-- WORK GRID -->
 <section class="work-section">
   <div class="container">
-    <div class="filters reveal" id="filters">
-      <button class="filter-btn active" data-filter="all">All work</button>
-      <button class="filter-btn" data-filter="ads">Meta &amp; Google Ads</button>
-      <button class="filter-btn" data-filter="content">Content</button>
-      <button class="filter-btn" data-filter="brand">Branding</button>
-      <button class="filter-btn" data-filter="web">Web &amp; Systems</button>
-      <span class="filter-count" id="filterCount">8 projects</span>
-    </div>
-
-    <div class="work-grid" id="workGrid">
-
-      <a href="#mond-travel" class="work-card wide reveal" data-tags="ads content web">
-        <div class="work-thumb thumb-travel"></div>
-        <div class="work-thumb-label">Mond</div>
-        <div class="work-card-content">
-          <div class="work-top">
-            <span class="work-cat">Featured · Travel · Ads</span>
-            <div class="work-arrow-circle">↗</div>
-          </div>
-          <div>
-            <div class="work-result">From 0 online sales → consistent bookings</div>
-            <div class="work-title">Mond Travel — <em>booking engine built from zero</em></div>
-          </div>
-        </div>
-      </a>
-
-      <a href="#master-hair" class="work-card reveal" data-tags="content">
-        <div class="work-thumb thumb-hair"></div>
-        <div class="work-thumb-label">Master</div>
-        <div class="work-card-content on-light">
-          <div class="work-top">
-            <span class="work-cat">Content · Social</span>
-            <div class="work-arrow-circle">↗</div>
-          </div>
-          <div>
-            <div class="work-result">Word-of-mouth → digital pipeline</div>
-            <div class="work-title">Master Hair — <em>clinic turned content brand</em></div>
-          </div>
-        </div>
-      </a>
-
-      <a href="#nalla" class="work-card reveal" data-tags="brand web content">
-        <div class="work-thumb thumb-fashion"></div>
-        <div class="work-thumb-label">Nalla</div>
-        <div class="work-card-content">
-          <div class="work-top">
-            <span class="work-cat">Branding · Website · Social</span>
-            <div class="work-arrow-circle">↗</div>
-          </div>
-          <div>
-            <div class="work-result">Scattered touchpoints → one cohesive digital storefront</div>
-            <div class="work-title">Nalla.mk — <em>brand, shop and social in sync</em></div>
-          </div>
-        </div>
-      </a>
-
-      <a href="#local-cafe" class="work-card reveal" data-tags="content brand">
-        <div class="work-thumb thumb-5"></div>
-        <div class="work-thumb-label">Café</div>
-        <div class="work-card-content on-light">
-          <div class="work-top">
-            <span class="work-cat">Hospitality · Brand</span>
-            <div class="work-arrow-circle">↗</div>
-          </div>
-          <div>
-            <div class="work-result">New identity + 2×/week reels</div>
-            <div class="work-title">Local Café — <em>a neighborhood icon online</em></div>
-          </div>
-        </div>
-      </a>
-
-      <a href="#fit-studio" class="work-card reveal" data-tags="ads web">
-        <div class="work-thumb thumb-6"></div>
-        <div class="work-thumb-label">Fit.</div>
-        <div class="work-card-content">
-          <div class="work-top">
-            <span class="work-cat">Fitness · Funnel</span>
-            <div class="work-arrow-circle">↗</div>
-          </div>
-          <div>
-            <div class="work-result">Landing + Meta Ads → trial fill rate 78%</div>
-            <div class="work-title">Fit Studio — <em>membership funnel launch</em></div>
-          </div>
-        </div>
-      </a>
-
-      <a href="#dental-plus" class="work-card reveal" data-tags="content ads">
-        <div class="work-thumb thumb-7"></div>
-        <div class="work-thumb-label">Dental+</div>
-        <div class="work-card-content on-light">
-          <div class="work-top">
-            <span class="work-cat">Healthcare · Local Ads</span>
-            <div class="work-arrow-circle">↗</div>
-          </div>
-          <div>
-            <div class="work-result">Local Meta Ads + booking flow</div>
-            <div class="work-title">Dental+ — <em>appointments on autopilot</em></div>
-          </div>
-        </div>
-      </a>
-
-      <a href="#restro" class="work-card reveal" data-tags="brand web">
-        <div class="work-thumb thumb-8"></div>
-        <div class="work-thumb-label">Restro</div>
-        <div class="work-card-content">
-          <div class="work-top">
-            <span class="work-cat">Restaurant · Brand + Web</span>
-            <div class="work-arrow-circle">↗</div>
-          </div>
-          <div>
-            <div class="work-result">Identity + reservation site</div>
-            <div class="work-title">Restro — <em>restaurant rebrand</em></div>
-          </div>
-        </div>
-      </a>
-
-      <a href="#beauty-lab" class="work-card reveal" data-tags="content ads">
-        <div class="work-thumb thumb-9"></div>
-        <div class="work-thumb-label">Beauty</div>
-        <div class="work-card-content on-light">
-          <div class="work-top">
-            <span class="work-cat">Beauty · Content</span>
-            <div class="work-arrow-circle">↗</div>
-          </div>
-          <div>
-            <div class="work-result">Reels strategy + creator content</div>
-            <div class="work-title">Beauty Lab — <em>launch that sold out stock</em></div>
-          </div>
-        </div>
-      </a>
-
+    <div class="work-empty reveal">
+      <div class="work-empty-kicker">Portfolio update in progress</div>
+      <h2>Projects are being added.</h2>
+      <p>This page stays live, but the project cards are cleared for now so you can add only the real case studies you want to show later.</p>
     </div>
   </div>
 </section>
@@ -498,166 +393,14 @@
 <!-- CASE STUDIES -->
 <section class="case-studies">
   <div class="container">
-    <div class="eyebrow reveal">The real stories</div>
-    <h2 class="reveal">The details <em>behind</em> the work.</h2>
-    <p class="lead reveal">Three businesses we grew from scratch — what they came with, what we built, and what changed.</p>
-
-    <!-- MOND TRAVEL -->
-    <div class="case reveal" id="mond-travel">
-      <div class="case-grid">
-        <div class="case-thumb thumb-travel"><div class="work-thumb-label">Mond</div></div>
-        <div>
-          <div class="case-cat">Travel Agency · Meta Ads · 2024</div>
-          <h3 class="case-title">Mond Travel — <em>booking engine built from zero</em></h3>
-
-          <div class="case-section">
-            <h4>The challenge</h4>
-            <p>A solid travel product but online sales were nearly zero. Ad budget went out the door with no measurable result — just impressions and a handful of inquiries that never converted.</p>
-          </div>
-          <div class="case-section">
-            <h4>What we built</h4>
-            <p>A 2×/day content system feeding targeted Meta Ads, paired with an interactive HTML landing page featuring live countdowns on each package. Every post, every ad, every story ended in the same place — a clear CTA to book.</p>
-          </div>
-
-          <div class="case-tags">
-            <span class="case-tag">Meta Ads</span>
-            <span class="case-tag">Content system</span>
-            <span class="case-tag">Landing page</span>
-            <span class="case-tag">Retargeting</span>
-          </div>
-        </div>
-      </div>
+    <div class="eyebrow reveal">Detailed portfolio</div>
+    <h2 class="reveal">Case studies will be added <em>here.</em></h2>
+    <p class="lead reveal">When your projects are ready, this area can hold the full story, visuals and results for each one without changing the rest of the page.</p>
+    <div class="work-empty soft reveal">
+      <div class="work-empty-kicker">Coming soon</div>
+      <h3>Only your final projects will be published here.</h3>
+      <p>For now, the old examples are removed so the portfolio stays clean until you are ready to add the real work.</p>
     </div>
-
-    <!-- MASTER HAIR -->
-    <div class="case reverse reveal" id="master-hair">
-      <div class="case-grid">
-        <div class="case-thumb thumb-hair"><div class="work-thumb-label">Master</div></div>
-        <div>
-          <div class="case-cat">Hair Clinic · Content &amp; Social · 2024</div>
-          <h3 class="case-title">Master Hair — <em>clinic turned content brand</em></h3>
-
-          <div class="case-section">
-            <h4>The challenge</h4>
-            <p>A quality clinic with a loyal client base but zero digital presence. New clients came exclusively through word-of-mouth referrals — growth was real but slow and unpredictable.</p>
-          </div>
-          <div class="case-section">
-            <h4>What we built</h4>
-            <p>A full content strategy with three pillars: educational posts to build authority, before/after testimonials for proof, and emotional Reels to trigger action. On top of it, a funnel built to convert a follower into a booked appointment.</p>
-          </div>
-
-          <div class="case-tags">
-            <span class="case-tag">Content strategy</span>
-            <span class="case-tag">Reels</span>
-            <span class="case-tag">Testimonials</span>
-            <span class="case-tag">Booking funnel</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- NALLA.MK -->
-    <div class="case reveal" id="nalla">
-      <div class="case-grid">
-        <div class="case-thumb thumb-fashion"><div class="work-thumb-label">Nalla</div></div>
-        <div>
-          <div class="case-cat">Branding · Website · Social Media · 2024</div>
-          <h3 class="case-title">Nalla.mk — <em>brand, shop and social aligned</em></h3>
-
-          <div class="case-section">
-            <h4>The challenge</h4>
-            <p>Nalla had a recognizable mark and a strong product range, but the brand, website and day-to-day social presence needed to feel like one system. The digital storefront had to present categories more clearly and make the shopping experience feel more polished from first impression to product page.</p>
-          </div>
-          <div class="case-section">
-            <h4>What we built</h4>
-            <p>We shaped a cleaner digital direction around the existing Nalla identity, the red-and-soft-pink palette, and a website experience that better frames the offer across women, men, pajamas, hosiery and KOTA collections. On top of that, we aligned social media output with the storefront so the brand looked consistent whether someone discovered Nalla on Instagram or landed directly on nalla.mk.</p>
-          </div>
-          <div class="case-section">
-            <h4>The result</h4>
-            <p>Nalla started reading as one cohesive brand instead of separate pieces. The store feels clearer, the presentation feels more premium, and the social presence now supports the same visual direction as the website.</p>
-          </div>
-
-          <div class="case-tags">
-            <span class="case-tag">Brand direction</span>
-            <span class="case-tag">Website styling</span>
-            <span class="case-tag">Social media direction</span>
-            <a class="case-tag" href="https://nalla.mk/" target="_blank" rel="noopener noreferrer">nalla.mk</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Other placeholder cases (short) -->
-    <div class="case reverse reveal" id="local-cafe">
-      <div class="case-grid">
-        <div class="case-thumb thumb-5"><div class="work-thumb-label">Café</div></div>
-        <div>
-          <div class="case-cat">Hospitality · Brand &amp; Content · 2023</div>
-          <h3 class="case-title">Local Café — <em>a neighborhood icon online</em></h3>
-          <div class="case-section">
-            <h4>In short</h4>
-            <p>Fresh visual identity + 2×/week Reels cadence turned a local café into a booked-out weekend destination. Queue on Saturdays. That's the report.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="case reveal" id="fit-studio">
-      <div class="case-grid">
-        <div class="case-thumb thumb-6"><div class="work-thumb-label">Fit.</div></div>
-        <div>
-          <div class="case-cat">Fitness · Funnel · 2024</div>
-          <h3 class="case-title">Fit Studio — <em>membership funnel launch</em></h3>
-          <div class="case-section">
-            <h4>In short</h4>
-            <p>Landing page + Meta Ads + trial conversion flow — 78% trial fill rate in the first 30 days. Pipeline full through Q2.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="case reverse reveal" id="dental-plus">
-      <div class="case-grid">
-        <div class="case-thumb thumb-7"><div class="work-thumb-label">Dental+</div></div>
-        <div>
-          <div class="case-cat">Healthcare · Local Ads · 2024</div>
-          <h3 class="case-title">Dental+ — <em>appointments on autopilot</em></h3>
-          <div class="case-section">
-            <h4>In short</h4>
-            <p>We paired local Meta Ads with a simpler booking path and testimonial-led creative. The result was a steadier appointment flow without relying only on walk-ins or referrals.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="case reveal" id="restro">
-      <div class="case-grid">
-        <div class="case-thumb thumb-8"><div class="work-thumb-label">Restro</div></div>
-        <div>
-          <div class="case-cat">Restaurant · Brand + Web · 2023</div>
-          <h3 class="case-title">Restro — <em>restaurant rebrand</em></h3>
-          <div class="case-section">
-            <h4>In short</h4>
-            <p>A sharper identity, a cleaner reservation site, and launch content that matched the new positioning. The brand felt premium again, and bookings had a clearer online path.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="case reverse reveal" id="beauty-lab">
-      <div class="case-grid">
-        <div class="case-thumb thumb-9"><div class="work-thumb-label">Beauty</div></div>
-        <div>
-          <div class="case-cat">Beauty · Content + Ads · 2024</div>
-          <h3 class="case-title">Beauty Lab — <em>launch that sold out stock</em></h3>
-          <div class="case-section">
-            <h4>In short</h4>
-            <p>We combined creator-style Reels with fast retargeting ads to turn launch attention into immediate sales. The first campaign wave moved inventory before the second content batch even went live.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -813,27 +556,6 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // Filter
-  const buttons = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('#workGrid .work-card');
-  const countEl = document.getElementById('filterCount');
-  countEl.textContent = cards.length + ' projects';
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      let count = 0;
-      cards.forEach(card => {
-        const tags = (card.dataset.tags || '').split(' ');
-        const show = filter === 'all' || tags.includes(filter);
-        card.classList.toggle('hidden', !show);
-        if (show) count++;
-      });
-      countEl.textContent = count + ' project' + (count === 1 ? '' : 's');
-    });
-  });
 
   // Mobile menu
   const burger = document.querySelector('.burger');
