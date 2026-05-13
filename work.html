@@ -44,9 +44,26 @@
     max-width: var(--maxw); margin: 0 auto; padding: 18px 24px; position: relative; }
   .logo { display: inline-flex; align-items: center; flex-shrink: 0; }
   .logo-mark { display: block; width: 160px; height: auto; }
+  .nav-right { display: flex; align-items: center; gap: 12px; }
   .nav-links { display: flex; gap: 34px; }
   .nav-links a { font-size: 14px; color: var(--ink-soft); transition: color .2s; }
   .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+  .lang-switch {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 4px; border: 1px solid var(--line); border-radius: 999px;
+    background: rgba(255,255,255,0.72);
+  }
+  .lang-btn {
+    min-width: 42px; padding: 9px 12px; border-radius: 999px;
+    border: 0; background: transparent; color: var(--ink-soft);
+    font-size: 12px; font-weight: 700; letter-spacing: 1px; cursor: pointer;
+    font-family: inherit; transition: all .2s ease;
+  }
+  .lang-btn:hover { color: var(--ink); }
+  .lang-btn.active {
+    background: var(--ink); color: #fff;
+    box-shadow: 0 8px 20px rgba(10,10,10,0.12);
+  }
   .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px;
     padding: 12px 22px; border-radius: 999px; font-size: 14px; font-weight: 500;
     transition: all .25s ease; border: 1px solid transparent; cursor: pointer; font-family: inherit; }
@@ -379,7 +396,8 @@
       box-shadow: 0 20px 40px rgba(10,10,10,0.08);
     }
     .burger { display: flex; }
-    .nav-inner .btn { display: none; }
+    .nav-right .btn { display: none; }
+    .nav-inner { gap: 12px; }
     .work-grid { grid-template-columns: 1fr; }
     .work-card.wide { grid-column: auto; aspect-ratio: 4 / 5; }
     .case-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -398,6 +416,9 @@
   @media (max-width: 560px) {
     .footer-top { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; gap: 16px; }
+    .nav-right { gap: 8px; }
+    .lang-switch { margin-left: auto; }
+    .lang-btn { min-width: 38px; padding: 8px 10px; }
     .logo-mark { width: 132px; }
     .footer-brand .logo-mark { width: 188px; }
     .page-title { font-size: 44px; letter-spacing: -1px; }
@@ -422,7 +443,7 @@
   }
 </style>
 </head>
-<body>
+<body data-page="work">
 
 <!-- NAV -->
 <nav>
@@ -431,13 +452,20 @@
       <img class="logo-mark" src="assets/a2dw-logo.svg" alt="A2 Digital World" />
     </a>
     <div class="nav-links">
-      <a href="index.html#services">Services</a>
-      <a href="work.html" class="active">Work</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#pricing">Pricing</a>
-      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#services" data-i18n="nav.services">Services</a>
+      <a href="work.html" class="active" data-i18n="nav.work">Work</a>
+      <a href="index.html#about" data-i18n="nav.about">About</a>
+      <a href="index.html#pricing" data-i18n="nav.pricing">Pricing</a>
+      <a href="index.html#faq" data-i18n="nav.faq">FAQ</a>
     </div>
-    <button type="button" class="btn btn-primary" data-open-modal>Get your free offer <span class="arrow">→</span></button>
+    <div class="nav-right">
+      <div class="lang-switch" aria-label="Choose language">
+        <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-lang="sq" aria-pressed="false">SQ</button>
+        <button type="button" class="lang-btn" data-lang="mk" aria-pressed="false">MK</button>
+      </div>
+      <button type="button" class="btn btn-primary" data-open-modal data-i18n-html="nav.freeOffer">Get your free offer <span class="arrow">→</span></button>
+    </div>
     <button type="button" class="burger" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -448,13 +476,13 @@
 <header class="page-header">
   <div class="container">
     <div class="crumbs reveal">
-      <a href="index.html">Home</a>
+      <a href="index.html" data-i18n="workPage.homeCrumb">Home</a>
       <span>/</span>
-      <span>Work</span>
+      <span data-i18n="workPage.currentCrumb">Work</span>
     </div>
-    <div class="eyebrow reveal">Portfolio</div>
-    <h1 class="page-title reveal">The next case studies<br>are coming <em>soon.</em></h1>
-    <p class="page-sub reveal">This page is kept ready for your real projects only. When the materials are finalized, the cards, visuals and detailed breakdowns can be added here without redesigning the page.</p>
+    <div class="eyebrow reveal" data-i18n="workPage.eyebrow">Portfolio</div>
+    <h1 class="page-title reveal" data-i18n-html="workPage.title">The next case studies<br>are coming <em>soon.</em></h1>
+    <p class="page-sub reveal" data-i18n="workPage.sub">This page is kept ready for your real projects only. When the materials are finalized, the cards, visuals and detailed breakdowns can be added here without redesigning the page.</p>
   </div>
 </header>
 
@@ -462,9 +490,9 @@
 <section class="work-section">
   <div class="container">
     <div class="work-empty reveal">
-      <div class="work-empty-kicker">Portfolio update in progress</div>
-      <h2>Projects are being added.</h2>
-      <p>This page stays live, but the project cards are cleared for now so you can add only the real case studies you want to show later.</p>
+      <div class="work-empty-kicker" data-i18n="workPage.emptyKicker">Portfolio update in progress</div>
+      <h2 data-i18n="workPage.emptyTitle">Projects are being added.</h2>
+      <p data-i18n="workPage.emptyText">This page stays live, but the project cards are cleared for now so you can add only the real case studies you want to show later.</p>
     </div>
   </div>
 </section>
@@ -472,13 +500,13 @@
 <!-- CASE STUDIES -->
 <section class="case-studies">
   <div class="container">
-    <div class="eyebrow reveal">Detailed portfolio</div>
-    <h2 class="reveal">Case studies will be added <em>here.</em></h2>
-    <p class="lead reveal">When your projects are ready, this area can hold the full story, visuals and results for each one without changing the rest of the page.</p>
+    <div class="eyebrow reveal" data-i18n="workPage.detailEyebrow">Detailed portfolio</div>
+    <h2 class="reveal" data-i18n-html="workPage.detailTitle">Case studies will be added <em>here.</em></h2>
+    <p class="lead reveal" data-i18n="workPage.detailLead">When your projects are ready, this area can hold the full story, visuals and results for each one without changing the rest of the page.</p>
     <div class="work-empty soft reveal">
-      <div class="work-empty-kicker">Coming soon</div>
-      <h3>Only your final projects will be published here.</h3>
-      <p>For now, the old examples are removed so the portfolio stays clean until you are ready to add the real work.</p>
+      <div class="work-empty-kicker" data-i18n="workPage.detailKicker">Coming soon</div>
+      <h3 data-i18n="workPage.detailEmptyTitle">Only your final projects will be published here.</h3>
+      <p data-i18n="workPage.detailEmptyText">For now, the old examples are removed so the portfolio stays clean until you are ready to add the real work.</p>
     </div>
   </div>
 </section>
@@ -486,9 +514,9 @@
 <!-- CTA -->
 <section class="cta-section">
   <div class="cta reveal">
-    <h2>Your project<br>could be <em>next.</em></h2>
-    <p>15 minutes — and we'll tell you exactly what's costing you sales every day and how to fix it. Free, no commitment.</p>
-    <button type="button" class="btn btn-primary" data-open-modal>Get your free offer <span class="arrow">→</span></button>
+    <h2 data-i18n-html="workPage.ctaTitle">Your project<br>could be <em>next.</em></h2>
+    <p data-i18n="workPage.ctaSub">15 minutes — and we'll tell you exactly what's costing you sales every day and how to fix it. Free, no commitment.</p>
+    <button type="button" class="btn btn-primary" data-open-modal data-i18n-html="workPage.ctaButton">Get your free offer <span class="arrow">→</span></button>
   </div>
 </section>
 
@@ -500,44 +528,39 @@
         <a href="index.html" class="logo" aria-label="A2 Digital World home">
           <img class="logo-mark" src="assets/a2dw-logo.svg" alt="A2 Digital World" />
         </a>
-        <p>A2 Digital World — ads that sell, results that show. Built in Skopje, working with businesses across the region.</p>
+        <p data-i18n="footer.brand">A2 Digital World — ads that sell, results that show. Built in Skopje, working with businesses across the region.</p>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h4 data-i18n="footer.servicesHead">Services</h4>
+        <ul id="footerServicesWork"></ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.studioHead">Studio</h4>
         <ul>
-          <li><a href="index.html#services">Meta &amp; Google Ads</a></li>
-          <li><a href="index.html#services">Marketing Systems</a></li>
-          <li><a href="index.html#services">Content</a></li>
-          <li><a href="index.html#services">Branding</a></li>
+          <li><a href="work.html" data-i18n="footer.studioWork">Work</a></li>
+          <li><a href="index.html#process" data-i18n="footer.studioProcess">Process</a></li>
+          <li><a href="index.html#pricing" data-i18n="footer.studioPricing">Pricing</a></li>
+          <li><a href="index.html#faq" data-i18n="footer.studioFaq">FAQ</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Studio</h4>
-        <ul>
-          <li><a href="work.html">Work</a></li>
-          <li><a href="index.html#process">Process</a></li>
-          <li><a href="index.html#pricing">Pricing</a></li>
-          <li><a href="index.html#faq">FAQ</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
+        <h4 data-i18n="footer.contactHead">Contact</h4>
         <ul>
           <li><a href="mailto:info@a2dw.com">info@a2dw.com</a></li>
-          <li><a href="index.html#contact">Book a consultation</a></li>
-          <li><a data-open-modal>Get a free offer</a></li>
-          <li><a href="index.html#faq">Common questions</a></li>
+          <li><a href="index.html#contact" data-i18n="footer.contactBook">Book a consultation</a></li>
+          <li><a data-open-modal data-i18n="footer.contactOffer">Get a free offer</a></li>
+          <li><a href="index.html#faq" data-i18n="workPage.contactFaq">Common questions</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-wordmark">A2<em>DW</em></div>
     <div class="footer-bottom">
-      <div>© 2026 A2 Digital World. All rights reserved.</div>
+      <div data-i18n="footer.rights">© 2026 A2 Digital World. All rights reserved.</div>
       <div class="socials">
-        <a href="mailto:info@a2dw.com">Email</a>
-        <a href="https://www.instagram.com/a2dw.co/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="work.html">Portfolio</a>
-        <a data-open-modal>Book a call</a>
+        <a href="mailto:info@a2dw.com" data-i18n="footer.email">Email</a>
+        <a href="https://www.instagram.com/a2dw.co/" target="_blank" rel="noopener noreferrer" data-i18n="footer.instagram">Instagram</a>
+        <a href="work.html" data-i18n="footer.portfolio">Portfolio</a>
+        <a data-open-modal data-i18n="footer.bookCall">Book a call</a>
       </div>
     </div>
   </div>
@@ -549,56 +572,15 @@
     <button type="button" class="intro-popup-close" id="introPopupClose" aria-label="Close services popup">X</button>
     <div class="intro-popup-head">
       <div>
-        <div class="intro-popup-eyebrow">Our services</div>
-        <h2 id="introPopupTitle">Before you continue.<br><em>Here is what we do.</em></h2>
-        <p class="intro-popup-lead">A2DW focuses on five core services built around growth, conversions and stronger brand positioning.</p>
+        <div class="intro-popup-eyebrow" data-i18n="popup.eyebrow">Our services</div>
+        <h2 id="introPopupTitle" data-i18n-html="popup.title">Before you continue.<br><em>Here is what we do.</em></h2>
+        <p class="intro-popup-lead" data-i18n="popup.lead">A2DW focuses on five core services built around growth, conversions and stronger brand positioning.</p>
       </div>
     </div>
-    <div class="intro-popup-grid">
-      <div class="intro-service-card">
-        <div class="intro-service-code">01</div>
-        <div>
-          <div class="intro-service-num">Paid Ads</div>
-          <h3>Meta Ads</h3>
-          <p>Facebook and Instagram advertising, targeting, creatives and conversion campaigns for local and regional brands.</p>
-        </div>
-      </div>
-      <div class="intro-service-card">
-        <div class="intro-service-code">02</div>
-        <div>
-          <div class="intro-service-num">Brand</div>
-          <h3>Brand Strategy</h3>
-          <p>Brand repositioning, tone of voice, audience definition and competitive analysis for growth-ready businesses.</p>
-        </div>
-      </div>
-      <div class="intro-service-card">
-        <div class="intro-service-code">03</div>
-        <div>
-          <div class="intro-service-num">Content</div>
-          <h3>Video &amp; Reels</h3>
-          <p>Short-form video content, animated reels and brand story videos optimized for Instagram and TikTok.</p>
-        </div>
-      </div>
-      <div class="intro-service-card">
-        <div class="intro-service-code">04</div>
-        <div>
-          <div class="intro-service-num">E-Commerce</div>
-          <h3>Store Growth</h3>
-          <p>Product launches, catalog ads, retargeting and Shopify store marketing for online brands.</p>
-        </div>
-      </div>
-      <div class="intro-service-card">
-        <div class="intro-service-code">05</div>
-        <div>
-          <div class="intro-service-num">Social</div>
-          <h3>Social Media</h3>
-          <p>Monthly planning, posting, community management and performance tracking for consistent growth.</p>
-        </div>
-      </div>
-    </div>
+    <div class="intro-popup-grid" id="introPopupGrid"></div>
     <div class="intro-popup-actions">
-      <p class="intro-popup-note">Close with the X, or continue straight into the website.</p>
-      <button type="button" class="btn btn-primary" id="introPopupContinue">Continue to website <span class="arrow">→</span></button>
+      <p class="intro-popup-note" data-i18n="popup.note">Close with the X, or continue straight into the website.</p>
+      <button type="button" class="btn btn-primary" id="introPopupContinue" data-i18n-html="popup.button">Continue to website <span class="arrow">→</span></button>
     </div>
   </div>
 </div>
@@ -610,58 +592,43 @@
     <div class="modal-inner">
 
       <div class="modal-form" id="modalForm">
-        <h3>Get your <em>free offer.</em></h3>
-        <p class="lead">15 minutes — and we'll tell you exactly what's costing you sales every day and how to fix it. Free, no commitment.</p>
+        <h3 data-i18n-html="modal.title">Get your <em>free offer.</em></h3>
+        <p class="lead" data-i18n="modal.lead">15 minutes — and we'll tell you exactly what's costing you sales every day and how to fix it. Free, no commitment.</p>
 
         <form id="offerForm" autocomplete="on">
           <div class="form-row">
             <div class="form-field">
-              <label for="name">Your name</label>
-              <input id="name" name="name" type="text" required placeholder="Jane Doe" />
+              <label for="name" data-i18n="modal.nameLabel">Your name</label>
+              <input id="name" name="name" type="text" required placeholder="Jane Doe" data-i18n-placeholder="modal.namePlaceholder" />
             </div>
             <div class="form-field">
-              <label for="email">Email address</label>
-              <input id="email" name="email" type="email" required placeholder="you@company.com" />
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-field">
-              <label for="phone">Phone number</label>
-              <input id="phone" name="phone" type="tel" placeholder="+389 ..." />
-            </div>
-            <div class="form-field">
-              <label for="business">Business name</label>
-              <input id="business" name="business" type="text" required placeholder="Your business" />
+              <label for="email" data-i18n="modal.emailLabel">Email address</label>
+              <input id="email" name="email" type="email" required placeholder="you@company.com" data-i18n-placeholder="modal.emailPlaceholder" />
             </div>
           </div>
           <div class="form-row">
             <div class="form-field">
-              <label for="service">Which service?</label>
-              <select id="service" name="service" required>
-                <option value="">Select a service</option>
-                <option value="Meta & Google Ads">Meta &amp; Google Ads</option>
-                <option value="Marketing System">Marketing System (funnels, automations)</option>
-                <option value="Content">Content (reels, stories, posts)</option>
-                <option value="Branding">Branding &amp; Design</option>
-                <option value="Full package">Full package — I need everything</option>
-                <option value="Not sure">Not sure yet — help me decide</option>
-              </select>
+              <label for="phone" data-i18n="modal.phoneLabel">Phone number</label>
+              <input id="phone" name="phone" type="tel" placeholder="+389 ..." data-i18n-placeholder="modal.phonePlaceholder" />
             </div>
             <div class="form-field">
-              <label for="budget">Monthly ad budget (€)</label>
-              <select id="budget" name="budget" required>
-                <option value="">Select a range</option>
-                <option value="0-500">€0 – €500</option>
-                <option value="500-1500">€500 – €1,500</option>
-                <option value="1500-5000">€1,500 – €5,000</option>
-                <option value="5000+">€5,000+</option>
-                <option value="No budget yet">Not sure / no budget yet</option>
-              </select>
+              <label for="business" data-i18n="modal.businessLabel">Business name</label>
+              <input id="business" name="business" type="text" required placeholder="Your business" data-i18n-placeholder="modal.businessPlaceholder" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="service" data-i18n="modal.serviceLabel">Which service?</label>
+              <select id="service" name="service" required></select>
+            </div>
+            <div class="form-field">
+              <label for="budget" data-i18n="modal.budgetLabel">Monthly ad budget (€)</label>
+              <select id="budget" name="budget" required></select>
             </div>
           </div>
           <div class="form-field">
-            <label for="message">How can we help you?</label>
-            <textarea id="message" name="message" required placeholder="Tell us about your business, your goals, and what you've tried so far."></textarea>
+            <label for="message" data-i18n="modal.messageLabel">How can we help you?</label>
+            <textarea id="message" name="message" required placeholder="Tell us about your business, your goals, and what you've tried so far." data-i18n-placeholder="modal.messagePlaceholder"></textarea>
           </div>
 
           <input type="hidden" name="_subject" value="New inquiry from A2DW website" />
@@ -669,25 +636,28 @@
           <input type="hidden" name="_captcha" value="false" />
           <input type="text" name="_honey" style="display:none" />
 
-          <button type="submit" class="form-submit" id="formSubmit">
+          <button type="submit" class="form-submit" id="formSubmit" data-i18n="modal.submit">
             Send — we reply within 2 hours
           </button>
-          <p class="form-note">By submitting, you agree to be contacted by A2DW. We never share your info.</p>
+          <p class="form-note" data-i18n="modal.note">By submitting, you agree to be contacted by A2DW. We never share your info.</p>
         </form>
       </div>
 
       <div class="modal-success" id="modalSuccess">
         <div class="check">✓</div>
-        <h3 style="text-align:center;">Your message is <em>on the way.</em></h3>
-        <p class="lead" style="text-align:center;">We'll reply within 2 hours during business hours. Talk soon.</p>
-        <button class="form-submit" id="successClose" style="margin-top: 24px;">Close</button>
+        <h3 style="text-align:center;" data-i18n-html="modal.successTitle">Your message is <em>on the way.</em></h3>
+        <p class="lead" style="text-align:center;" data-i18n="modal.successLead">We'll reply within 2 hours during business hours. Talk soon.</p>
+        <button class="form-submit" id="successClose" style="margin-top: 24px;" data-i18n="modal.successClose">Close</button>
       </div>
 
     </div>
-  </div>
+</div>
 </div>
 
+<script src="assets/site-i18n.js"></script>
 <script>
+  const i18n = window.A2DWI18N.init(document.body.dataset.page);
+
   // Reveal
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -770,9 +740,11 @@
     unlockBodyIfClear();
   }
 
-  document.querySelectorAll('[data-open-modal]').forEach(el => {
-    el.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
-    el.style.cursor = 'pointer';
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('[data-open-modal]');
+    if (!trigger) return;
+    e.preventDefault();
+    openModal();
   });
   modalClose.addEventListener('click', closeModal);
   successClose.addEventListener('click', closeModal);
@@ -796,7 +768,7 @@
   offerForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     formSubmit.disabled = true;
-    formSubmit.textContent = 'Sending...';
+    formSubmit.textContent = i18n.t('modal.sending');
     const formData = new FormData(offerForm);
     const payload = {};
     formData.forEach((v, k) => payload[k] = v);
@@ -817,7 +789,7 @@
       fallbackMailto(payload);
     } finally {
       formSubmit.disabled = false;
-      formSubmit.innerHTML = 'Send — we reply within 2 hours';
+      formSubmit.textContent = i18n.t('modal.submit');
     }
   });
   function fallbackMailto(p) {

@@ -54,9 +54,28 @@
     display: inline-flex; align-items: center; flex-shrink: 0;
   }
   .logo-mark { display: block; width: 160px; height: auto; }
+  .nav-right {
+    display: flex; align-items: center; gap: 12px;
+  }
   .nav-links { display: flex; gap: 34px; }
   .nav-links a { font-size: 14px; color: var(--ink-soft); transition: color .2s; }
   .nav-links a:hover { color: var(--ink); }
+  .lang-switch {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 4px; border: 1px solid var(--line); border-radius: 999px;
+    background: rgba(255,255,255,0.72);
+  }
+  .lang-btn {
+    min-width: 42px; padding: 9px 12px; border-radius: 999px;
+    border: 0; background: transparent; color: var(--ink-soft);
+    font-size: 12px; font-weight: 700; letter-spacing: 1px; cursor: pointer;
+    font-family: inherit; transition: all .2s ease;
+  }
+  .lang-btn:hover { color: var(--ink); }
+  .lang-btn.active {
+    background: var(--ink); color: #fff;
+    box-shadow: 0 8px 20px rgba(10,10,10,0.12);
+  }
   .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
     padding: 12px 22px; border-radius: 999px; font-size: 14px; font-weight: 500;
@@ -182,17 +201,20 @@
   .services h2.section-title em { color: #888; }
   .services .section-sub { color: #a0a0a0; }
   .service-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
+    display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1px;
     background: #222; border: 1px solid #222; border-radius: 20px; overflow: hidden;
   }
   .service-card {
-    background: var(--ink); padding: 48px 40px;
-    transition: background .3s ease; cursor: pointer; position: relative; min-height: 360px;
+    grid-column: span 2;
+    background: var(--ink); padding: 40px 34px;
+    transition: background .3s ease; cursor: pointer; position: relative; min-height: 320px;
     display: flex; flex-direction: column; justify-content: space-between;
   }
+  .service-card:nth-last-child(-n + 2) { grid-column: span 3; }
   .service-card:hover { background: #161616; }
   .service-icon {
-    font-size: 28px; margin-bottom: 24px; display: inline-block;
+    font-size: 22px; margin-bottom: 18px; display: inline-block;
+    letter-spacing: 2px; font-weight: 700;
   }
   .service-num {
     font-family: 'Instrument Serif', serif; font-style: italic;
@@ -200,7 +222,7 @@
   }
   .service-card h3 {
     font-family: 'Instrument Serif', serif; font-weight: 400;
-    font-size: 34px; letter-spacing: -0.5px; margin-bottom: 16px; line-height: 1.1;
+    font-size: 30px; letter-spacing: -0.5px; margin-bottom: 14px; line-height: 1.06;
   }
   .service-card p { color: #a0a0a0; font-size: 15px; line-height: 1.6; }
   .service-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
@@ -569,13 +591,16 @@
       box-shadow: 0 20px 40px rgba(10,10,10,0.08);
     }
     .burger { display: flex; }
-    .nav-inner .btn { display: none; }
+    .nav-right .btn { display: none; }
+    .nav-inner { gap: 12px; }
     .stats-bar-inner { grid-template-columns: repeat(2, 1fr); }
     .stat-col:nth-child(2) { border-right: 0; }
     .stat-col:nth-child(1), .stat-col:nth-child(2) { border-bottom: 1px solid var(--line); }
     .compare-grid { grid-template-columns: 1fr; }
     .compare-right { border-left: 0; border-top: 1px solid var(--line); }
-    .service-grid { grid-template-columns: 1fr; }
+    .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .service-card,
+    .service-card:nth-last-child(-n + 2) { grid-column: span 1; }
     .work-grid { grid-template-columns: 1fr; }
     .work-head { flex-direction: column; align-items: flex-start; }
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -598,6 +623,9 @@
     .footer-top { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; gap: 16px; }
     .hero { padding: 120px 0 60px; }
+    .nav-right { gap: 8px; }
+    .lang-switch { margin-left: auto; }
+    .lang-btn { min-width: 38px; padding: 8px 10px; }
     .logo-mark { width: 132px; }
     .footer-brand .logo-mark { width: 188px; }
     h1.hero-title { font-size: 42px; letter-spacing: -1px; }
@@ -608,6 +636,7 @@
     .footer-wordmark { font-size: 72px; letter-spacing: -4px; }
     .pill { max-width: 100%; }
     .hero-cta .btn { width: 100%; }
+    .service-grid { grid-template-columns: 1fr; }
     .intro-popup { width: min(100vw - 20px, 1320px); padding: 20px 16px; border-radius: 22px; }
     .intro-popup-close { top: 14px; right: 14px; }
     .intro-popup h2 { font-size: 30px; }
@@ -617,10 +646,11 @@
     .intro-service-card h3 { font-size: 20px; }
     .intro-service-card p { font-size: 12px; }
     .intro-popup .btn { width: 100%; }
+    .service-card { min-height: 280px; padding: 32px 24px; }
   }
 </style>
 </head>
-<body>
+<body data-page="home">
 
 <!-- NAV -->
 <nav>
@@ -629,13 +659,20 @@
       <img class="logo-mark" src="assets/a2dw-logo.svg" alt="A2 Digital World" />
     </a>
     <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
     </div>
-    <button type="button" class="btn btn-primary" data-open-modal>Get your free offer <span class="arrow">→</span></button>
+    <div class="nav-right">
+      <div class="lang-switch" aria-label="Choose language">
+        <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-lang="sq" aria-pressed="false">SQ</button>
+        <button type="button" class="lang-btn" data-lang="mk" aria-pressed="false">MK</button>
+      </div>
+      <button type="button" class="btn btn-primary" data-open-modal data-i18n-html="nav.freeOffer">Get your free offer <span class="arrow">→</span></button>
+    </div>
     <button type="button" class="burger" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -645,16 +682,16 @@
 <!-- HERO -->
 <header class="hero">
   <div class="container">
-    <span class="pill reveal"><span class="pill-dot"></span> Accepting new clients — 2 slots left this month</span>
-    <h1 class="hero-title reveal">Your business<br>deserves <em>more sales.</em></h1>
-    <p class="hero-sub reveal">A2 Digital World builds ad strategies that bring real customers — not just clicks and likes. Measurable results, every month. Ads that sell. Results that show.</p>
+    <span class="pill reveal"><span class="pill-dot"></span> <span data-i18n="hero.pill">Accepting new clients — 2 slots left this month</span></span>
+    <h1 class="hero-title reveal" data-i18n-html="hero.title">Your business<br>deserves <em>more sales.</em></h1>
+    <p class="hero-sub reveal" data-i18n="hero.sub">A2 Digital World builds ad strategies that bring real customers — not just clicks and likes. Measurable results, every month. Ads that sell. Results that show.</p>
     <div class="hero-cta reveal">
-      <button type="button" class="btn btn-primary" data-open-modal>Start today — free consultation <span class="arrow">→</span></button>
-      <a href="#work" class="btn btn-secondary">See the results</a>
+      <button type="button" class="btn btn-primary" data-open-modal data-i18n-html="hero.primaryCta">Start today — free consultation <span class="arrow">→</span></button>
+      <a href="#work" class="btn btn-secondary" data-i18n="hero.secondaryCta">See the results</a>
     </div>
   </div>
   <div class="scroll-hint">
-    <span>Scroll</span>
+    <span data-i18n="hero.scroll">Scroll</span>
     <div class="scroll-line"></div>
   </div>
 </header>
@@ -664,19 +701,19 @@
   <div class="stats-bar-inner">
     <div class="stat-col">
       <div class="stat-big">50<em>+</em></div>
-      <div class="stat-note">Businesses grown</div>
+      <div class="stat-note" data-i18n="stats.businesses">Businesses grown</div>
     </div>
     <div class="stat-col">
       <div class="stat-big">5<em>+</em></div>
-      <div class="stat-note">Years of results</div>
+      <div class="stat-note" data-i18n="stats.years">Years of results</div>
     </div>
     <div class="stat-col">
       <div class="stat-big">3<em>×</em></div>
-      <div class="stat-note">Average ROAS</div>
+      <div class="stat-note" data-i18n="stats.roas">Average ROAS</div>
     </div>
     <div class="stat-col">
       <div class="stat-big">0</div>
-      <div class="stat-note">Empty promises</div>
+      <div class="stat-note" data-i18n="stats.promises">Empty promises</div>
     </div>
   </div>
 </section>
@@ -685,28 +722,18 @@
 <section>
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow">The gap we close</div>
-      <h2 class="section-title">Most businesses don't have<br>a <em>product problem</em>.<br>They have a <em>selling problem</em>.</h2>
+      <div class="eyebrow" data-i18n="problem.eyebrow">The gap we close</div>
+      <h2 class="section-title" data-i18n-html="problem.title">Most businesses don't have<br>a <em>product problem</em>.<br>They have a <em>selling problem</em>.</h2>
     </div>
 
     <div class="compare-grid reveal">
       <div class="compare-col compare-left">
-        <div class="compare-head">✗ &nbsp; Sound familiar?</div>
-        <div style="padding: 0 32px;">
-          <div class="compare-row"><span class="compare-icon">✗</span><span>You've spent on ads but your sales haven't moved.</span></div>
-          <div class="compare-row"><span class="compare-icon">✗</span><span>Your agency reports likes and reach — not revenue.</span></div>
-          <div class="compare-row"><span class="compare-icon">✗</span><span>You don't actually know what's working and what isn't.</span></div>
-          <div class="compare-row"><span class="compare-icon">✗</span><span>Budget left the account. Customers never arrived.</span></div>
-        </div>
+        <div class="compare-head" data-i18n="problem.leftHead">✗   Sound familiar?</div>
+        <div id="comparePain" style="padding: 0 32px;"></div>
       </div>
       <div class="compare-col compare-right">
-        <div class="compare-head">✓ &nbsp; With A2DW</div>
-        <div style="padding: 0 32px;">
-          <div class="compare-row"><span class="compare-icon">✓</span><span>Campaigns optimized for conversions — not reach.</span></div>
-          <div class="compare-row"><span class="compare-icon">✓</span><span>We report ROAS, CPA and real sales every month.</span></div>
-          <div class="compare-row"><span class="compare-icon">✓</span><span>Transparent dashboard — you see where every cent goes.</span></div>
-          <div class="compare-row"><span class="compare-icon">✓</span><span>Systems that keep selling — even when you're offline.</span></div>
-        </div>
+        <div class="compare-head" data-i18n="problem.rightHead">✓   With A2DW</div>
+        <div id="compareWin" style="padding: 0 32px;"></div>
       </div>
     </div>
   </div>
@@ -716,72 +743,11 @@
 <section class="services" id="services">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow">Services</div>
-      <h2 class="section-title">Every service has one goal —<br><em>to grow your sales.</em></h2>
-      <p class="section-sub">We don't offer 'standard packages'. We build the right system based on your business, your target, and your budget.</p>
+      <div class="eyebrow" data-i18n="services.eyebrow">Services</div>
+      <h2 class="section-title" data-i18n-html="services.title">Every service has one goal —<br><em>to grow your sales.</em></h2>
+      <p class="section-sub" data-i18n="services.sub">We don't offer 'standard packages'. We build the right system based on your business, your target, and your budget.</p>
     </div>
-    <div class="service-grid">
-      <div class="service-card reveal" data-open-modal>
-        <div class="service-arrow">↗</div>
-        <div>
-          <div class="service-icon">ADS</div>
-          <div class="service-num">01 / Paid Ads</div>
-          <h3>Meta Ads &amp; Paid Advertising</h3>
-          <p>Meta and Google Ads campaigns built from scratch to continuous optimisation. Every euro works to bring customers — not just clicks.</p>
-        </div>
-        <div class="service-tags">
-          <span class="service-tag">Meta Ads</span>
-          <span class="service-tag">Google Ads</span>
-          <span class="service-tag">Retargeting</span>
-          <span class="service-tag">Creative testing</span>
-        </div>
-      </div>
-      <div class="service-card reveal" data-open-modal>
-        <div class="service-arrow">↗</div>
-        <div>
-          <div class="service-icon">SYS</div>
-          <div class="service-num">02 / Systems</div>
-          <h3>Marketing System</h3>
-          <p>Landing pages, sales funnels, email/WhatsApp automations — systems that convert 24/7, even when you're offline.</p>
-        </div>
-        <div class="service-tags">
-          <span class="service-tag">Landing pages</span>
-          <span class="service-tag">Sales funnels</span>
-          <span class="service-tag">Email automation</span>
-          <span class="service-tag">WhatsApp flows</span>
-        </div>
-      </div>
-      <div class="service-card reveal" data-open-modal>
-        <div class="service-arrow">↗</div>
-        <div>
-          <div class="service-icon">CNT</div>
-          <div class="service-num">03 / Content</div>
-          <h3>Content That Converts</h3>
-          <p>Posts, Reels, Stories, Carousels — every piece of content is built with a goal: to push the audience towards action and sales.</p>
-        </div>
-        <div class="service-tags">
-          <span class="service-tag">Reels</span>
-          <span class="service-tag">Stories</span>
-          <span class="service-tag">Carousels</span>
-          <span class="service-tag">Copywriting</span>
-        </div>
-      </div>
-      <div class="service-card reveal" data-open-modal>
-        <div class="service-arrow">↗</div>
-        <div>
-          <div class="service-icon">ID</div>
-          <div class="service-num">04 / Brand</div>
-          <h3>Graphic Design &amp; Full Branding</h3>
-          <p>Logo, full visual identity, print and digital materials. Our design isn't just beautiful — it communicates, persuades and sells.</p>
-        </div>
-        <div class="service-tags">
-          <span class="service-tag">Logo</span>
-          <span class="service-tag">Identity</span>
-          <span class="service-tag">Print</span>
-          <span class="service-tag">Digital assets</span>
-        </div>
-      </div>
-    </div>
+    <div class="service-grid" id="serviceGrid"></div>
   </div>
 </section>
 
@@ -790,16 +756,16 @@
   <div class="container">
     <div class="work-head reveal">
       <div>
-        <div class="eyebrow">Case studies</div>
-        <h2 class="section-title">New projects are being<br><em>prepared right now.</em></h2>
-        <p class="section-sub">This section stays ready so new case studies can be added as soon as they are approved.</p>
+        <div class="eyebrow" data-i18n="work.eyebrow">Case studies</div>
+        <h2 class="section-title" data-i18n-html="work.title">New projects are being<br><em>prepared right now.</em></h2>
+        <p class="section-sub" data-i18n="work.sub">This section stays ready so new case studies can be added as soon as they are approved.</p>
       </div>
     </div>
 
     <div class="work-empty reveal">
-      <div class="work-empty-kicker">Portfolio update in progress</div>
-      <h3>Projects will appear here soon.</h3>
-      <p>The section is ready for your real case studies, screenshots and results. Once you have them, they can be dropped in here without rebuilding the rest of the site.</p>
+      <div class="work-empty-kicker" data-i18n="work.kicker">Portfolio update in progress</div>
+      <h3 data-i18n="work.emptyTitle">Projects will appear here soon.</h3>
+      <p data-i18n="work.emptyText">The section is ready for your real case studies, screenshots and results. Once you have them, they can be dropped in here without rebuilding the rest of the site.</p>
     </div>
   </div>
 </section>
@@ -809,13 +775,13 @@
   <div class="container">
     <div class="about-grid">
       <div class="reveal">
-        <div class="eyebrow">About A2DW</div>
-        <h2 class="about-quote">We're not an agency —<br>we're your <em>sales partner.</em></h2>
+        <div class="eyebrow" data-i18n="about.eyebrow">About A2DW</div>
+        <h2 class="about-quote" data-i18n-html="about.title">We're not an agency —<br>we're your <em>sales partner.</em></h2>
       </div>
       <div class="about-body reveal">
-        <p>A2 Digital World was created because businesses deserve marketing that works — not pretty pages without results. Every campaign has one goal: to grow your sales.</p>
-        <p>From Skopje, North Macedonia, we work with founders and SMB owners across the region who want numbers that move, not vanity metrics.</p>
-        <button class="btn btn-primary" data-open-modal>See what we can do for you <span class="arrow">→</span></button>
+        <p data-i18n="about.p1">A2 Digital World was created because businesses deserve marketing that works — not pretty pages without results. Every campaign has one goal: to grow your sales.</p>
+        <p data-i18n="about.p2">From Skopje, North Macedonia, we work with founders and SMB owners across the region who want numbers that move, not vanity metrics.</p>
+        <button class="btn btn-primary" data-open-modal data-i18n-html="about.cta">See what we can do for you <span class="arrow">→</span></button>
       </div>
     </div>
   </div>
@@ -825,36 +791,11 @@
 <section id="process">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow">How we work</div>
-      <h2 class="section-title">A short, <em>honest</em> process.</h2>
-      <p class="section-sub">Four steps. No mystery. You always know what's happening and what's next.</p>
+      <div class="eyebrow" data-i18n="process.eyebrow">How we work</div>
+      <h2 class="section-title" data-i18n-html="process.title">A short, <em>honest</em> process.</h2>
+      <p class="section-sub" data-i18n="process.sub">Four steps. No mystery. You always know what's happening and what's next.</p>
     </div>
-    <div class="process-list">
-      <div class="process-row reveal">
-        <div class="process-num">01</div>
-        <div class="process-title">Audit</div>
-        <div class="process-desc">We look at your business, your numbers and the money you've already spent — and tell you exactly where it's leaking.</div>
-        <div class="process-plus">+</div>
-      </div>
-      <div class="process-row reveal">
-        <div class="process-num">02</div>
-        <div class="process-title">Strategize</div>
-        <div class="process-desc">Positioning, offer, channels, creative angles, budget and KPIs — on paper, signed off before a single euro is spent.</div>
-        <div class="process-plus">+</div>
-      </div>
-      <div class="process-row reveal">
-        <div class="process-num">03</div>
-        <div class="process-title">Launch</div>
-        <div class="process-desc">Ads, content, landing pages, automations. We ship fast and go live with the full system in 14 days or less.</div>
-        <div class="process-plus">+</div>
-      </div>
-      <div class="process-row reveal">
-        <div class="process-num">04</div>
-        <div class="process-title">Optimize</div>
-        <div class="process-desc">Weekly reviews. Cut what doesn't work, double what does. Full transparency through a live dashboard.</div>
-        <div class="process-plus">+</div>
-      </div>
-    </div>
+    <div class="process-list" id="processList"></div>
   </div>
 </section>
 
@@ -862,27 +803,20 @@
 <section class="pricing" id="pricing">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow">Pricing</div>
-      <h2 class="section-title">One starting point.<br><em>One honest number.</em></h2>
-      <p class="section-sub">No hidden fees. No '12-month contracts'. We build the right plan for your business — and scale it as you grow.</p>
+      <div class="eyebrow" data-i18n="pricing.eyebrow">Pricing</div>
+      <h2 class="section-title" data-i18n-html="pricing.title">One starting point.<br><em>One honest number.</em></h2>
+      <p class="section-sub" data-i18n="pricing.sub">No hidden fees. No '12-month contracts'. We build the right plan for your business — and scale it as you grow.</p>
     </div>
 
     <div class="price-card-single reveal">
       <div>
-        <div class="price-caption">Starting from</div>
-        <div class="price-huge"><span class="euro">€</span>500<em>/month</em></div>
-        <p style="color:#a0a0a0; margin-top: 20px; max-width: 420px;">Talk to us — we build the right plan for your business, based on your industry, budget and goals.</p>
-        <button class="btn btn-primary" style="background:#fff; color:var(--ink); margin-top: 8px;" data-open-modal>Get your free offer <span class="arrow">→</span></button>
+        <div class="price-caption" data-i18n="pricing.caption">Starting from</div>
+        <div class="price-huge"><span class="euro">€</span><span data-i18n="pricing.amount">350</span><em data-i18n="pricing.period">/month</em></div>
+        <p style="color:#a0a0a0; margin-top: 20px; max-width: 420px;" data-i18n="pricing.lead">Talk to us — we build the right plan for your business, based on your industry, budget and goals.</p>
+        <button class="btn btn-primary" style="background:#fff; color:var(--ink); margin-top: 8px;" data-open-modal data-i18n-html="pricing.cta">Get your free offer <span class="arrow">→</span></button>
       </div>
       <div class="price-body">
-        <ul class="price-features">
-          <li>Free 15-minute strategy call</li>
-          <li>Transparent monthly reporting</li>
-          <li>Live dashboard — ROAS, CPA, revenue</li>
-          <li>Weekly campaign optimization</li>
-          <li>Content built for conversion</li>
-          <li>No long-term contracts</li>
-        </ul>
+        <ul class="price-features" id="priceFeatures"></ul>
       </div>
     </div>
   </div>
@@ -893,48 +827,12 @@
   <div class="container">
     <div class="faq-wrap">
       <div class="reveal">
-        <div class="eyebrow">Questions</div>
-        <h2 class="section-title">Good <em>questions.</em><br>Honest answers.</h2>
-        <p class="section-sub">If yours isn't here, just ask — we reply within 2 hours during business hours.</p>
-        <button class="btn btn-primary" style="margin-top:32px;" data-open-modal>Ask a question <span class="arrow">→</span></button>
+        <div class="eyebrow" data-i18n="faq.eyebrow">Questions</div>
+        <h2 class="section-title" data-i18n-html="faq.title">Good <em>questions.</em><br>Honest answers.</h2>
+        <p class="section-sub" data-i18n="faq.sub">If yours isn't here, just ask — we reply within 2 hours during business hours.</p>
+        <button class="btn btn-primary" style="margin-top:32px;" data-open-modal data-i18n-html="faq.cta">Ask a question <span class="arrow">→</span></button>
       </div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <div class="faq-q">
-            <h3>How long until I see results?</h3>
-            <div class="faq-toggle">+</div>
-          </div>
-          <div class="faq-a">Paid ads typically show signal within 2–3 weeks. Organic and content compound — expect meaningful lift by days 60–90. We share a live dashboard from day one, so you never have to guess.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">
-            <h3>Do you work with small budgets?</h3>
-            <div class="faq-toggle">+</div>
-          </div>
-          <div class="faq-a">Yes — we start from €500/month and scale with you. What we need is a real product, a clear offer, and willingness to test. We've taken businesses from zero online revenue to consistent daily bookings.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">
-            <h3>What do you actually report on?</h3>
-            <div class="faq-toggle">+</div>
-          </div>
-          <div class="faq-a">ROAS, CPA, revenue generated, cost per lead, funnel conversion rates — the numbers that pay your bills. Likes and reach are context, not KPIs.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">
-            <h3>Who owns the content you produce?</h3>
-            <div class="faq-toggle">+</div>
-          </div>
-          <div class="faq-a">You do. Every asset — raw footage, edited video, ad creative, design files — is yours the moment it's approved. No licensing weirdness, no hostage files.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">
-            <h3>Can I cancel anytime?</h3>
-            <div class="faq-toggle">+</div>
-          </div>
-          <div class="faq-a">Yes. Month-to-month, 30 days notice. We'd rather you stay because the work is good — not because you're locked in.</div>
-        </div>
-      </div>
+      <div class="faq-list" id="faqList"></div>
     </div>
   </div>
 </section>
@@ -942,9 +840,9 @@
 <!-- CTA -->
 <section id="contact" style="padding: 80px 0;">
   <div class="cta reveal">
-    <h2>Add a new customer<br>next month. <em>Start today.</em></h2>
-    <p>15 minutes — and we'll tell you exactly what's costing you sales every day and how to fix it. Free, no commitment.</p>
-    <button type="button" class="btn btn-primary" data-open-modal>Book your free consultation <span class="arrow">→</span></button>
+    <h2 data-i18n-html="cta.title">Add a new customer<br>next month. <em>Start today.</em></h2>
+    <p data-i18n="cta.sub">15 minutes — and we'll tell you exactly what's costing you sales every day and how to fix it. Free, no commitment.</p>
+    <button type="button" class="btn btn-primary" data-open-modal data-i18n-html="cta.button">Book your free consultation <span class="arrow">→</span></button>
   </div>
 </section>
 
@@ -956,44 +854,39 @@
         <a href="index.html" class="logo" aria-label="A2 Digital World home">
           <img class="logo-mark" src="assets/a2dw-logo.svg" alt="A2 Digital World" />
         </a>
-        <p>A2 Digital World — ads that sell, results that show. Built in Skopje, working with businesses across the region.</p>
+        <p data-i18n="footer.brand">A2 Digital World — ads that sell, results that show. Built in Skopje, working with businesses across the region.</p>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h4 data-i18n="footer.servicesHead">Services</h4>
+        <ul id="footerServicesHome"></ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.studioHead">Studio</h4>
         <ul>
-          <li><a href="#services">Meta &amp; Google Ads</a></li>
-          <li><a href="#services">Marketing Systems</a></li>
-          <li><a href="#services">Content</a></li>
-          <li><a href="#services">Branding</a></li>
+          <li><a href="work.html" data-i18n="footer.studioWork">Work</a></li>
+          <li><a href="#process" data-i18n="footer.studioProcess">Process</a></li>
+          <li><a href="#pricing" data-i18n="footer.studioPricing">Pricing</a></li>
+          <li><a href="#faq" data-i18n="footer.studioFaq">FAQ</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Studio</h4>
-        <ul>
-          <li><a href="work.html">Work</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
+        <h4 data-i18n="footer.contactHead">Contact</h4>
         <ul>
           <li><a href="mailto:info@a2dw.com">info@a2dw.com</a></li>
-          <li><a href="#contact">Book a consultation</a></li>
-          <li><a data-open-modal>Get a free offer</a></li>
-          <li><a href="work.html">See our work</a></li>
+          <li><a href="#contact" data-i18n="footer.contactBook">Book a consultation</a></li>
+          <li><a data-open-modal data-i18n="footer.contactOffer">Get a free offer</a></li>
+          <li><a href="work.html" data-i18n="footer.contactWork">See our work</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-wordmark">A2<em>DW</em></div>
     <div class="footer-bottom">
-      <div>© 2026 A2 Digital World. All rights reserved.</div>
+      <div data-i18n="footer.rights">© 2026 A2 Digital World. All rights reserved.</div>
       <div class="socials">
-        <a href="mailto:info@a2dw.com">Email</a>
-        <a href="work.html">Portfolio</a>
-        <a href="https://www.instagram.com/a2dw.co/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a data-open-modal>Book a call</a>
+        <a href="mailto:info@a2dw.com" data-i18n="footer.email">Email</a>
+        <a href="work.html" data-i18n="footer.portfolio">Portfolio</a>
+        <a href="https://www.instagram.com/a2dw.co/" target="_blank" rel="noopener noreferrer" data-i18n="footer.instagram">Instagram</a>
+        <a data-open-modal data-i18n="footer.bookCall">Book a call</a>
       </div>
     </div>
   </div>
@@ -1005,56 +898,15 @@
     <button type="button" class="intro-popup-close" id="introPopupClose" aria-label="Close services popup">X</button>
     <div class="intro-popup-head">
       <div>
-        <div class="intro-popup-eyebrow">Our services</div>
-        <h2 id="introPopupTitle">Before you continue.<br><em>Here is what we do.</em></h2>
-        <p class="intro-popup-lead">A2DW focuses on five core services built around growth, conversions and stronger brand positioning.</p>
+        <div class="intro-popup-eyebrow" data-i18n="popup.eyebrow">Our services</div>
+        <h2 id="introPopupTitle" data-i18n-html="popup.title">Before you continue.<br><em>Here is what we do.</em></h2>
+        <p class="intro-popup-lead" data-i18n="popup.lead">A2DW focuses on five core services built around growth, conversions and stronger brand positioning.</p>
       </div>
     </div>
-    <div class="intro-popup-grid">
-      <div class="intro-service-card">
-        <div class="intro-service-code">01</div>
-        <div>
-          <div class="intro-service-num">Paid Ads</div>
-          <h3>Meta Ads</h3>
-          <p>Facebook and Instagram advertising, targeting, creatives and conversion campaigns for local and regional brands.</p>
-        </div>
-      </div>
-      <div class="intro-service-card">
-        <div class="intro-service-code">02</div>
-        <div>
-          <div class="intro-service-num">Brand</div>
-          <h3>Brand Strategy</h3>
-          <p>Brand repositioning, tone of voice, audience definition and competitive analysis for growth-ready businesses.</p>
-        </div>
-      </div>
-      <div class="intro-service-card">
-        <div class="intro-service-code">03</div>
-        <div>
-          <div class="intro-service-num">Content</div>
-          <h3>Video &amp; Reels</h3>
-          <p>Short-form video content, animated reels and brand story videos optimized for Instagram and TikTok.</p>
-        </div>
-      </div>
-      <div class="intro-service-card">
-        <div class="intro-service-code">04</div>
-        <div>
-          <div class="intro-service-num">E-Commerce</div>
-          <h3>Store Growth</h3>
-          <p>Product launches, catalog ads, retargeting and Shopify store marketing for online brands.</p>
-        </div>
-      </div>
-      <div class="intro-service-card">
-        <div class="intro-service-code">05</div>
-        <div>
-          <div class="intro-service-num">Social</div>
-          <h3>Social Media</h3>
-          <p>Monthly planning, posting, community management and performance tracking for consistent growth.</p>
-        </div>
-      </div>
-    </div>
+    <div class="intro-popup-grid" id="introPopupGrid"></div>
     <div class="intro-popup-actions">
-      <p class="intro-popup-note">Close with the X, or continue straight into the website.</p>
-      <button type="button" class="btn btn-primary" id="introPopupContinue">Continue to website <span class="arrow">→</span></button>
+      <p class="intro-popup-note" data-i18n="popup.note">Close with the X, or continue straight into the website.</p>
+      <button type="button" class="btn btn-primary" id="introPopupContinue" data-i18n-html="popup.button">Continue to website <span class="arrow">→</span></button>
     </div>
   </div>
 </div>
@@ -1066,58 +918,43 @@
     <div class="modal-inner">
 
       <div class="modal-form" id="modalForm">
-        <h3>Get your <em>free offer.</em></h3>
-        <p class="lead">15 minutes — and we'll tell you exactly what's costing you sales every day and how to fix it. Free, no commitment.</p>
+        <h3 data-i18n-html="modal.title">Get your <em>free offer.</em></h3>
+        <p class="lead" data-i18n="modal.lead">15 minutes — and we'll tell you exactly what's costing you sales every day and how to fix it. Free, no commitment.</p>
 
         <form id="offerForm" autocomplete="on">
           <div class="form-row">
             <div class="form-field">
-              <label for="name">Your name</label>
-              <input id="name" name="name" type="text" required placeholder="Jane Doe" />
+              <label for="name" data-i18n="modal.nameLabel">Your name</label>
+              <input id="name" name="name" type="text" required placeholder="Jane Doe" data-i18n-placeholder="modal.namePlaceholder" />
             </div>
             <div class="form-field">
-              <label for="email">Email address</label>
-              <input id="email" name="email" type="email" required placeholder="you@company.com" />
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-field">
-              <label for="phone">Phone number</label>
-              <input id="phone" name="phone" type="tel" placeholder="+389 ..." />
-            </div>
-            <div class="form-field">
-              <label for="business">Business name</label>
-              <input id="business" name="business" type="text" required placeholder="Your business" />
+              <label for="email" data-i18n="modal.emailLabel">Email address</label>
+              <input id="email" name="email" type="email" required placeholder="you@company.com" data-i18n-placeholder="modal.emailPlaceholder" />
             </div>
           </div>
           <div class="form-row">
             <div class="form-field">
-              <label for="service">Which service?</label>
-              <select id="service" name="service" required>
-                <option value="">Select a service</option>
-                <option value="Meta & Google Ads">Meta &amp; Google Ads</option>
-                <option value="Marketing System">Marketing System (funnels, automations)</option>
-                <option value="Content">Content (reels, stories, posts)</option>
-                <option value="Branding">Branding &amp; Design</option>
-                <option value="Full package">Full package — I need everything</option>
-                <option value="Not sure">Not sure yet — help me decide</option>
-              </select>
+              <label for="phone" data-i18n="modal.phoneLabel">Phone number</label>
+              <input id="phone" name="phone" type="tel" placeholder="+389 ..." data-i18n-placeholder="modal.phonePlaceholder" />
             </div>
             <div class="form-field">
-              <label for="budget">Monthly ad budget (€)</label>
-              <select id="budget" name="budget" required>
-                <option value="">Select a range</option>
-                <option value="0-500">€0 – €500</option>
-                <option value="500-1500">€500 – €1,500</option>
-                <option value="1500-5000">€1,500 – €5,000</option>
-                <option value="5000+">€5,000+</option>
-                <option value="No budget yet">Not sure / no budget yet</option>
-              </select>
+              <label for="business" data-i18n="modal.businessLabel">Business name</label>
+              <input id="business" name="business" type="text" required placeholder="Your business" data-i18n-placeholder="modal.businessPlaceholder" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="service" data-i18n="modal.serviceLabel">Which service?</label>
+              <select id="service" name="service" required></select>
+            </div>
+            <div class="form-field">
+              <label for="budget" data-i18n="modal.budgetLabel">Monthly ad budget (€)</label>
+              <select id="budget" name="budget" required></select>
             </div>
           </div>
           <div class="form-field">
-            <label for="message">How can we help you?</label>
-            <textarea id="message" name="message" required placeholder="Tell us about your business, your goals, and what you've tried so far."></textarea>
+            <label for="message" data-i18n="modal.messageLabel">How can we help you?</label>
+            <textarea id="message" name="message" required placeholder="Tell us about your business, your goals, and what you've tried so far." data-i18n-placeholder="modal.messagePlaceholder"></textarea>
           </div>
 
           <!-- FormSubmit config (hidden fields) -->
@@ -1126,25 +963,28 @@
           <input type="hidden" name="_captcha" value="false" />
           <input type="text" name="_honey" style="display:none" />
 
-          <button type="submit" class="form-submit" id="formSubmit">
+          <button type="submit" class="form-submit" id="formSubmit" data-i18n="modal.submit">
             Send — we reply within 2 hours
           </button>
-          <p class="form-note">By submitting, you agree to be contacted by A2DW. We never share your info.</p>
+          <p class="form-note" data-i18n="modal.note">By submitting, you agree to be contacted by A2DW. We never share your info.</p>
         </form>
       </div>
 
       <div class="modal-success" id="modalSuccess">
         <div class="check">✓</div>
-        <h3 style="text-align:center;">Your message is <em>on the way.</em></h3>
-        <p class="lead" style="text-align:center;">We'll reply within 2 hours during business hours. Talk soon.</p>
-        <button class="form-submit" id="successClose" style="margin-top: 24px;">Close</button>
+        <h3 style="text-align:center;" data-i18n-html="modal.successTitle">Your message is <em>on the way.</em></h3>
+        <p class="lead" style="text-align:center;" data-i18n="modal.successLead">We'll reply within 2 hours during business hours. Talk soon.</p>
+        <button class="form-submit" id="successClose" style="margin-top: 24px;" data-i18n="modal.successClose">Close</button>
       </div>
 
     </div>
-  </div>
+</div>
 </div>
 
+<script src="assets/site-i18n.js"></script>
 <script>
+  const i18n = window.A2DWI18N.init(document.body.dataset.page);
+
   // Reveal-on-scroll
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -1154,13 +994,13 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   // FAQ accordion
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasActive = item.classList.contains('active');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-      if (!wasActive) item.classList.add('active');
-    });
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('.faq-q');
+    if (!trigger) return;
+    const item = trigger.parentElement;
+    const wasActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+    if (!wasActive) item.classList.add('active');
   });
 
   // Mobile menu
@@ -1238,12 +1078,11 @@
     unlockBodyIfClear();
   }
 
-  document.querySelectorAll('[data-open-modal]').forEach(el => {
-    el.addEventListener('click', (e) => {
-      e.preventDefault();
-      openModal();
-    });
-    el.style.cursor = 'pointer';
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('[data-open-modal]');
+    if (!trigger) return;
+    e.preventDefault();
+    openModal();
   });
   modalClose.addEventListener('click', closeModal);
   successClose.addEventListener('click', closeModal);
@@ -1270,7 +1109,7 @@
   offerForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     formSubmit.disabled = true;
-    formSubmit.textContent = 'Sending...';
+    formSubmit.textContent = i18n.t('modal.sending');
 
     const formData = new FormData(offerForm);
     const payload = {};
@@ -1294,7 +1133,7 @@
       fallbackMailto(payload);
     } finally {
       formSubmit.disabled = false;
-        formSubmit.innerHTML = 'Send — we reply within 2 hours';
+      formSubmit.textContent = i18n.t('modal.submit');
     }
   });
 
