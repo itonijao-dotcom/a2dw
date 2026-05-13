@@ -1,14 +1,14 @@
-(function () {
+﻿(function () {
   const translations = {
     en: {
       meta: {
         home: {
-          title: "A2 Digital World — Ads that sell. Results that show.",
-          description: "A2 Digital World builds ad strategies that bring real customers — not just clicks and likes. Measurable results, every month."
+          title: "A2 Digital World, Ads that sell. Results that show.",
+          description: "A2 Digital World builds ad strategies that bring real customers, not just clicks and likes. Measurable results, every month."
         },
         work: {
-          title: "Work — A2 Digital World",
-          description: "Selected case studies from A2 Digital World — businesses we've grown through ads, content and systems that sell."
+          title: "Work, A2 Digital World",
+          description: "Selected case studies from A2 Digital World, businesses we've grown through ads, content and systems that sell."
         }
       },
       nav: {
@@ -20,10 +20,10 @@
         freeOffer: "Get your free offer <span class=\"arrow\">→</span>"
       },
       hero: {
-        pill: "Accepting new clients — 2 slots left this month",
+        pill: "Accepting new clients, 2 slots left this month",
         title: "Your business<br>deserves <em>more sales.</em>",
-        sub: "A2 Digital World builds ad strategies that bring real customers — not just clicks and likes. Measurable results, every month. Ads that sell. Results that show.",
-        primaryCta: "Start today — free consultation <span class=\"arrow\">→</span>",
+        sub: "A2 Digital World builds ad strategies that bring real customers, not just clicks and likes. Measurable results, every month. Ads that sell. Results that show.",
+        primaryCta: "Start today, free consultation <span class=\"arrow\">→</span>",
         secondaryCta: "See the results",
         scroll: "Scroll"
       },
@@ -40,20 +40,20 @@
         rightHead: "✓ With A2DW",
         leftRows: [
           "You've spent on ads but your sales haven't moved.",
-          "Your agency reports likes and reach — not revenue.",
+          "Your agency reports likes and reach, not revenue.",
           "You don't actually know what's working and what isn't.",
           "Budget left the account. Customers never arrived."
         ],
         rightRows: [
-          "Campaigns optimized for conversions — not reach.",
+          "Campaigns optimized for conversions, not reach.",
           "We report ROAS, CPA and real sales every month.",
-          "Transparent dashboard — you see where every cent goes.",
-          "Systems that keep selling — even when you're offline."
+          "Transparent dashboard, you see where every cent goes.",
+          "Systems that keep selling, even when you're offline."
         ]
       },
       services: {
         eyebrow: "Services",
-        title: "Every service has one goal —<br><em>to grow your sales.</em>",
+        title: "Every service has one goal,<br><em>to grow your sales.</em>",
         sub: "We don't offer 'standard packages'. We build the right system based on your business, your target, and your budget.",
         items: [
           {
@@ -113,8 +113,8 @@
       },
       about: {
         eyebrow: "About A2DW",
-        title: "We're not an agency —<br>we're your <em>sales partner.</em>",
-        p1: "A2 Digital World was created because businesses deserve marketing that works — not pretty pages without results. Every campaign has one goal: to grow your sales.",
+        title: "We're not an agency,<br>we're your <em>sales partner.</em>",
+        p1: "A2 Digital World was created because businesses deserve marketing that works, not pretty pages without results. Every campaign has one goal: to grow your sales.",
         p2: "From Skopje, North Macedonia, we work with founders and SMB owners across the region who want numbers that move, not vanity metrics.",
         cta: "See what we can do for you <span class=\"arrow\">→</span>"
       },
@@ -126,12 +126,12 @@
           {
             num: "01",
             title: "Audit",
-            desc: "We look at your business, your numbers and the money you've already spent — and tell you exactly where it's leaking."
+            desc: "We look at your business, your numbers and the money you've already spent, and tell you exactly where it's leaking."
           },
           {
             num: "02",
             title: "Strategize",
-            desc: "Positioning, offer, channels, creative angles, budget and KPIs — on paper, signed off before a single euro is spent."
+            desc: "Positioning, offer, channels, creative angles, budget and KPIs, on paper, signed off before a single euro is spent."
           },
           {
             num: "03",
@@ -148,16 +148,16 @@
       pricing: {
         eyebrow: "Pricing",
         title: "One starting point.<br><em>One honest number.</em>",
-        sub: "No hidden fees. No '12-month contracts'. We build the right plan for your business — and scale it as you grow.",
+        sub: "No hidden fees. No '12-month contracts'. We build the right plan for your business, and scale it as you grow.",
         caption: "Starting from",
         amount: "350",
         period: "/month",
-        lead: "Talk to us — we build the right plan for your business, based on your industry, budget and goals.",
+        lead: "Talk to us, we build the right plan for your business, based on your industry, budget and goals.",
         cta: "Get your free offer <span class=\"arrow\">→</span>",
         features: [
           "Free 15-minute strategy call",
           "Transparent monthly reporting",
-          "Live dashboard — ROAS, CPA, revenue",
+          "Live dashboard, ROAS, CPA, revenue",
           "Weekly campaign optimization",
           "Content built for conversion",
           "No long-term contracts"
@@ -166,38 +166,38 @@
       faq: {
         eyebrow: "Questions",
         title: "Good <em>questions.</em><br>Honest answers.",
-        sub: "If yours isn't here, just ask — we reply within 2 hours during business hours.",
+        sub: "If yours isn't here, just ask, we reply within 2 hours during business hours.",
         cta: "Ask a question <span class=\"arrow\">→</span>",
         items: [
           {
             q: "How long until I see results?",
-            a: "Paid ads typically show signal within 2–3 weeks. Organic and content compound — expect meaningful lift by days 60–90. We share a live dashboard from day one, so you never have to guess."
+            a: "Paid ads typically show signal within 2–3 weeks. Organic and content compound, expect meaningful lift by days 60–90. We share a live dashboard from day one, so you never have to guess."
           },
           {
             q: "Do you work with small budgets?",
-            a: "Yes — we start from €350/month and scale with you. What we need is a real product, a clear offer, and willingness to test. We've taken businesses from zero online revenue to consistent daily bookings."
+            a: "Yes, we start from €350/month and scale with you. What we need is a real product, a clear offer, and willingness to test. We've taken businesses from zero online revenue to consistent daily bookings."
           },
           {
             q: "What do you actually report on?",
-            a: "ROAS, CPA, revenue generated, cost per lead, funnel conversion rates — the numbers that pay your bills. Likes and reach are context, not KPIs."
+            a: "ROAS, CPA, revenue generated, cost per lead, funnel conversion rates, the numbers that pay your bills. Likes and reach are context, not KPIs."
           },
           {
             q: "Who owns the content you produce?",
-            a: "You do. Every asset — raw footage, edited video, ad creative, design files — is yours the moment it's approved. No licensing weirdness, no hostage files."
+            a: "You do. Every asset, raw footage, edited video, ad creative, design files, is yours the moment it's approved. No licensing weirdness, no hostage files."
           },
           {
             q: "Can I cancel anytime?",
-            a: "Yes. Month-to-month, 30 days notice. We'd rather you stay because the work is good — not because you're locked in."
+            a: "Yes. Month-to-month, 30 days notice. We'd rather you stay because the work is good, not because you're locked in."
           }
         ]
       },
       cta: {
         title: "Add a new customer<br>next month. <em>Start today.</em>",
-        sub: "15 minutes — and we'll tell you exactly what's costing you sales every day and how to fix it. Free, no commitment.",
+        sub: "15 minutes, and we'll tell you exactly what's costing you sales every day and how to fix it. Free, no commitment.",
         button: "Book your free consultation <span class=\"arrow\">→</span>"
       },
       footer: {
-        brand: "A2 Digital World — ads that sell, results that show. Built in Skopje, working with businesses across the region.",
+        brand: "A2 Digital World, ads that sell, results that show. Built in Skopje, working with businesses across the region.",
         servicesHead: "Services",
         studioHead: "Studio",
         contactHead: "Contact",
@@ -223,7 +223,7 @@
       },
       modal: {
         title: "Get your <em>free offer.</em>",
-        lead: "15 minutes — and we'll tell you exactly what's costing you sales every day and how to fix it. Free, no commitment.",
+        lead: "15 minutes, and we'll tell you exactly what's costing you sales every day and how to fix it. Free, no commitment.",
         nameLabel: "Your name",
         namePlaceholder: "Jane Doe",
         emailLabel: "Email address",
@@ -236,7 +236,7 @@
         budgetLabel: "Monthly ad budget (€)",
         messageLabel: "How can we help you?",
         messagePlaceholder: "Tell us about your business, your goals, and what you've tried so far.",
-        submit: "Send — we reply within 2 hours",
+        submit: "Send, we reply within 2 hours",
         note: "By submitting, you agree to be contacted by A2DW. We never share your info.",
         successTitle: "Your message is <em>on the way.</em>",
         successLead: "We'll reply within 2 hours during business hours. Talk soon.",
@@ -246,8 +246,8 @@
         popupCloseAria: "Close services popup",
         serviceOptions: {
           placeholder: "Select a service",
-          full: "Full package — I need everything",
-          unsure: "Not sure yet — help me decide"
+          full: "Full package, I need everything",
+          unsure: "Not sure yet, help me decide"
         },
         budgetOptions: [
           { value: "", label: "Select a range" },
@@ -274,7 +274,7 @@
         detailEmptyTitle: "Only your final projects will be published here.",
         detailEmptyText: "For now, the old examples are removed so the portfolio stays clean until you are ready to add the real work.",
         ctaTitle: "Your project<br>could be <em>next.</em>",
-        ctaSub: "15 minutes — and we'll tell you exactly what's costing you sales every day and how to fix it. Free, no commitment.",
+        ctaSub: "15 minutes, and we'll tell you exactly what's costing you sales every day and how to fix it. Free, no commitment.",
         ctaButton: "Get your free offer <span class=\"arrow\">→</span>",
         contactFaq: "Common questions"
       }
@@ -282,12 +282,12 @@
     sq: {
       meta: {
         home: {
-          title: "A2 Digital World — Reklama që shesin. Rezultate që duken.",
-          description: "A2 Digital World ndërton strategji reklamimi që sjellin klientë realë — jo vetëm klikime dhe pëlqime. Rezultate të matshme, çdo muaj."
+          title: "A2 Digital World, Reklama që shesin. Rezultate që duken.",
+          description: "A2 Digital World ndërton strategji reklamimi që sjellin klientë realë, jo vetëm klikime dhe pëlqime. Rezultate të matshme, çdo muaj."
         },
         work: {
-          title: "Punimet — A2 Digital World",
-          description: "Raste të zgjedhura nga A2 Digital World — biznese që i kemi rritur me reklama, përmbajtje dhe sisteme që shesin."
+          title: "Punimet, A2 Digital World",
+          description: "Raste të zgjedhura nga A2 Digital World, biznese që i kemi rritur me reklama, përmbajtje dhe sisteme që shesin."
         }
       },
       nav: {
@@ -299,10 +299,10 @@
         freeOffer: "Merr ofertën falas <span class=\"arrow\">→</span>"
       },
       hero: {
-        pill: "Po pranojmë klientë të rinj — edhe 2 vende këtë muaj",
+        pill: "Po pranojmë klientë të rinj, edhe 2 vende këtë muaj",
         title: "Biznesi yt<br>e meriton <em>më shumë shitje.</em>",
-        sub: "A2 Digital World ndërton strategji reklamimi që sjellin klientë realë — jo vetëm klikime dhe pëlqime. Rezultate të matshme, çdo muaj. Reklama që shesin. Rezultate që duken.",
-        primaryCta: "Fillo sot — konsultë falas <span class=\"arrow\">→</span>",
+        sub: "A2 Digital World ndërton strategji reklamimi që sjellin klientë realë, jo vetëm klikime dhe pëlqime. Rezultate të matshme, çdo muaj. Reklama që shesin. Rezultate që duken.",
+        primaryCta: "Fillo sot, konsultë falas <span class=\"arrow\">→</span>",
         secondaryCta: "Shihe rezultatin",
         scroll: "Poshtë"
       },
@@ -319,20 +319,20 @@
         rightHead: "✓ Me A2DW",
         leftRows: [
           "Ke shpenzuar në reklama, por shitjet nuk janë lëvizur.",
-          "Agjencia jote raporton pëlqime dhe reach — jo të ardhura.",
+          "Agjencia jote raporton pëlqime dhe reach, jo të ardhura.",
           "Nuk e di realisht çfarë po funksionon dhe çfarë jo.",
           "Buxheti doli nga llogaria. Klientët nuk erdhën."
         ],
         rightRows: [
-          "Fushata të optimizuara për konvertime — jo për reach.",
+          "Fushata të optimizuara për konvertime, jo për reach.",
           "Raportojmë ROAS, CPA dhe shitje reale çdo muaj.",
-          "Dashboard transparent — e sheh ku shkon çdo cent.",
+          "Dashboard transparent, e sheh ku shkon çdo cent.",
           "Sisteme që vazhdojnë të shesin edhe kur nuk je online."
         ]
       },
       services: {
         eyebrow: "Shërbimet",
-        title: "Çdo shërbim ka një qëllim —<br><em>të rrisë shitjet e tua.</em>",
+        title: "Çdo shërbim ka një qëllim,<br><em>të rrisë shitjet e tua.</em>",
         sub: "Nuk ofrojmë 'paketa standarde'. E ndërtojmë sistemin e duhur sipas biznesit, targetit dhe buxhetit tënd.",
         items: [
           {
@@ -392,9 +392,9 @@
       },
       about: {
         eyebrow: "Rreth A2DW",
-        title: "Nuk jemi agjenci —<br>jemi <em>partneri yt i shitjeve.</em>",
-        p1: "A2 Digital World u krijua sepse bizneset meritojnë marketing që funksionon — jo faqe të bukura pa rezultat. Çdo fushatë ka një qëllim: të rrisë shitjet e tua.",
-        p2: "Nga Shkupi, Maqedonia e Veriut, punojmë me themelues dhe pronarë biznesesh në rajon që duan numra që lëvizin — jo vanity metrics.",
+        title: "Nuk jemi agjenci,<br>jemi <em>partneri yt i shitjeve.</em>",
+        p1: "A2 Digital World u krijua sepse bizneset meritojnë marketing që funksionon, jo faqe të bukura pa rezultat. Çdo fushatë ka një qëllim: të rrisë shitjet e tua.",
+        p2: "Nga Shkupi, Maqedonia e Veriut, punojmë me themelues dhe pronarë biznesesh në rajon që duan numra që lëvizin, jo vanity metrics.",
         cta: "Shihe çfarë mund të bëjmë për ty <span class=\"arrow\">→</span>"
       },
       process: {
@@ -405,12 +405,12 @@
           {
             num: "01",
             title: "Auditim",
-            desc: "E shohim biznesin tënd, numrat dhe paratë që i ke shpenzuar tashmë — dhe të tregojmë saktë ku po rrjedhin."
+            desc: "E shohim biznesin tënd, numrat dhe paratë që i ke shpenzuar tashmë, dhe të tregojmë saktë ku po rrjedhin."
           },
           {
             num: "02",
             title: "Strategji",
-            desc: "Pozicionim, ofertë, kanale, kënde kreative, buxhet dhe KPI — në letër, të qarta para se të shpenzohet qoftë edhe një euro."
+            desc: "Pozicionim, ofertë, kanale, kënde kreative, buxhet dhe KPI, në letër, të qarta para se të shpenzohet qoftë edhe një euro."
           },
           {
             num: "03",
@@ -427,16 +427,16 @@
       pricing: {
         eyebrow: "Çmimet",
         title: "Një pikë nisjeje.<br><em>Një numër i sinqertë.</em>",
-        sub: "Pa tarifa të fshehura. Pa 'kontrata 12-mujore'. E ndërtojmë planin e duhur për biznesin tënd — dhe e rrisim bashkë me ty.",
+        sub: "Pa tarifa të fshehura. Pa 'kontrata 12-mujore'. E ndërtojmë planin e duhur për biznesin tënd, dhe e rrisim bashkë me ty.",
         caption: "Duke filluar nga",
         amount: "350",
         period: "/muaj",
-        lead: "Fol me ne — e ndërtojmë planin e duhur për biznesin tënd, sipas industrisë, buxhetit dhe objektivave.",
+        lead: "Fol me ne, e ndërtojmë planin e duhur për biznesin tënd, sipas industrisë, buxhetit dhe objektivave.",
         cta: "Merr ofertën falas <span class=\"arrow\">→</span>",
         features: [
           "Telefonatë strategjie falas 15 minuta",
           "Raportim mujor transparent",
-          "Dashboard live — ROAS, CPA, të ardhura",
+          "Dashboard live, ROAS, CPA, të ardhura",
           "Optimizim javor i fushatave",
           "Përmbajtje e ndërtuar për konvertime",
           "Pa kontrata afatgjata"
@@ -445,38 +445,38 @@
       faq: {
         eyebrow: "Pyetje",
         title: "Pyetje të <em>mira.</em><br>Përgjigje të sinqerta.",
-        sub: "Nëse pyetja jote s’është këtu, vetëm na shkruaj — kthehemi brenda 2 orëve gjatë orarit të punës.",
+        sub: "Nëse pyetja jote s’është këtu, vetëm na shkruaj, kthehemi brenda 2 orëve gjatë orarit të punës.",
         cta: "Bëj një pyetje <span class=\"arrow\">→</span>",
         items: [
           {
             q: "Sa kohë duhet derisa të shoh rezultate?",
-            a: "Paid ads zakonisht japin sinjal brenda 2–3 javësh. Organiku dhe përmbajtja ndërtohen me kohë — rritje kuptimplote zakonisht nga dita 60–90. Që nga dita e parë ke dashboard live, që të mos hamendësosh."
+            a: "Paid ads zakonisht japin sinjal brenda 2–3 javësh. Organiku dhe përmbajtja ndërtohen me kohë, rritje kuptimplote zakonisht nga dita 60–90. Që nga dita e parë ke dashboard live, që të mos hamendësosh."
           },
           {
             q: "A punoni edhe me buxhete të vogla?",
-            a: "Po — fillojmë nga €350/muaj dhe rritemi bashkë me ty. Na duhet një produkt real, një ofertë e qartë dhe gatishmëri për testim. Kemi çuar biznese nga zero të ardhura online në booking-e të përditshme."
+            a: "Po, fillojmë nga €350/muaj dhe rritemi bashkë me ty. Na duhet një produkt real, një ofertë e qartë dhe gatishmëri për testim. Kemi çuar biznese nga zero të ardhura online në booking-e të përditshme."
           },
           {
             q: "Çfarë raportoni realisht?",
-            a: "ROAS, CPA, të ardhura të gjeneruara, kosto për lead, norma konvertimi në funnel — numrat që të paguajnë faturat. Likes dhe reach janë vetëm kontekst, jo KPI."
+            a: "ROAS, CPA, të ardhura të gjeneruara, kosto për lead, norma konvertimi në funnel, numrat që të paguajnë faturat. Likes dhe reach janë vetëm kontekst, jo KPI."
           },
           {
             q: "Kush e zotëron përmbajtjen që e prodhoni?",
-            a: "Ti. Çdo asset — video raw, video e montuar, kreativë reklamash, fajlla dizajni — është i yti sapo të aprovohet. Pa licenca të çuditshme dhe pa fajlla peng."
+            a: "Ti. Çdo asset, video raw, video e montuar, kreativë reklamash, fajlla dizajni, është i yti sapo të aprovohet. Pa licenca të çuditshme dhe pa fajlla peng."
           },
           {
             q: "A mund ta ndërpres kur të dua?",
-            a: "Po. Muaj pas muaji, me njoftim 30 ditë. Preferojmë të rrish sepse puna është e mirë — jo sepse je i lidhur me kontratë."
+            a: "Po. Muaj pas muaji, me njoftim 30 ditë. Preferojmë të rrish sepse puna është e mirë, jo sepse je i lidhur me kontratë."
           }
         ]
       },
       cta: {
         title: "Shto një klient të ri<br>muajin tjetër. <em>Fillo sot.</em>",
-        sub: "15 minuta — dhe të tregojmë saktë çfarë po të kushton shitje çdo ditë dhe si ta rregullosh. Falas, pa obligim.",
+        sub: "15 minuta, dhe të tregojmë saktë çfarë po të kushton shitje çdo ditë dhe si ta rregullosh. Falas, pa obligim.",
         button: "Rezervo konsultën falas <span class=\"arrow\">→</span>"
       },
       footer: {
-        brand: "A2 Digital World — reklama që shesin, rezultate që duken. Ndërtuar në Shkup, duke punuar me biznese në gjithë rajonin.",
+        brand: "A2 Digital World, reklama që shesin, rezultate që duken. Ndërtuar në Shkup, duke punuar me biznese në gjithë rajonin.",
         servicesHead: "Shërbimet",
         studioHead: "Studio",
         contactHead: "Kontakt",
@@ -502,7 +502,7 @@
       },
       modal: {
         title: "Merr <em>ofertën falas.</em>",
-        lead: "15 minuta — dhe të tregojmë saktë çfarë po të kushton shitje çdo ditë dhe si ta rregullosh. Falas, pa obligim.",
+        lead: "15 minuta, dhe të tregojmë saktë çfarë po të kushton shitje çdo ditë dhe si ta rregullosh. Falas, pa obligim.",
         nameLabel: "Emri yt",
         namePlaceholder: "Emër Mbiemër",
         emailLabel: "Email adresa",
@@ -515,7 +515,7 @@
         budgetLabel: "Buxheti mujor për ads (€)",
         messageLabel: "Si mund të të ndihmojmë?",
         messagePlaceholder: "Na trego për biznesin, qëllimet dhe çfarë ke provuar deri tani.",
-        submit: "Dërgo — kthehemi brenda 2 orësh",
+        submit: "Dërgo, kthehemi brenda 2 orësh",
         note: "Duke e dërguar formularin, pranon të kontaktohesh nga A2DW. Informacioni yt nuk ndahet.",
         successTitle: "Mesazhi yt është <em>nisur.</em>",
         successLead: "Të kthehemi brenda 2 orëve gjatë orarit të punës. Flasim shpejt.",
@@ -525,8 +525,8 @@
         popupCloseAria: "Mbylle popup-in e shërbimeve",
         serviceOptions: {
           placeholder: "Zgjidh një shërbim",
-          full: "Paketa e plotë — më duhet gjithçka",
-          unsure: "Nuk jam i sigurt ende — më ndihmo të vendos"
+          full: "Paketa e plotë, më duhet gjithçka",
+          unsure: "Nuk jam i sigurt ende, më ndihmo të vendos"
         },
         budgetOptions: [
           { value: "", label: "Zgjidh një interval" },
@@ -553,7 +553,7 @@
         detailEmptyTitle: "Vetëm projektet finale do të publikohen këtu.",
         detailEmptyText: "Për momentin, shembujt e vjetër janë hequr që portfolio të mbetet i pastër derisa të jesh gati për punën reale.",
         ctaTitle: "Projekti yt<br>mund të jetë <em>tjetri.</em>",
-        ctaSub: "15 minuta — dhe të tregojmë saktë çfarë po të kushton shitje çdo ditë dhe si ta rregullosh. Falas, pa obligim.",
+        ctaSub: "15 minuta, dhe të tregojmë saktë çfarë po të kushton shitje çdo ditë dhe si ta rregullosh. Falas, pa obligim.",
         ctaButton: "Merr ofertën falas <span class=\"arrow\">→</span>",
         contactFaq: "Pyetje të zakonshme"
       }
@@ -561,12 +561,12 @@
     mk: {
       meta: {
         home: {
-          title: "A2 Digital World — Реклами што продаваат. Резултати што се гледаат.",
-          description: "A2 Digital World гради рекламни стратегии што носат вистински клиенти — не само кликови и лајкови. Мерливи резултати, секој месец."
+          title: "A2 Digital World, Реклами што продаваат. Резултати што се гледаат.",
+          description: "A2 Digital World гради рекламни стратегии што носат вистински клиенти, не само кликови и лајкови. Мерливи резултати, секој месец."
         },
         work: {
-          title: "Проекти — A2 Digital World",
-          description: "Избрани случаи од A2 Digital World — бизниси што сме ги растеле преку реклами, содржина и системи што продаваат."
+          title: "Проекти, A2 Digital World",
+          description: "Избрани случаи од A2 Digital World, бизниси што сме ги растеле преку реклами, содржина и системи што продаваат."
         }
       },
       nav: {
@@ -578,10 +578,10 @@
         freeOffer: "Земи бесплатна понуда <span class=\"arrow\">→</span>"
       },
       hero: {
-        pill: "Прифаќаме нови клиенти — уште 2 места овој месец",
+        pill: "Прифаќаме нови клиенти, уште 2 места овој месец",
         title: "Твојот бизнис<br>заслужува <em>повеќе продажби.</em>",
-        sub: "A2 Digital World гради рекламни стратегии што носат вистински клиенти — не само кликови и лајкови. Мерливи резултати, секој месец. Реклами што продаваат. Резултати што се гледаат.",
-        primaryCta: "Почни денес — бесплатна консултација <span class=\"arrow\">→</span>",
+        sub: "A2 Digital World гради рекламни стратегии што носат вистински клиенти, не само кликови и лајкови. Мерливи резултати, секој месец. Реклами што продаваат. Резултати што се гледаат.",
+        primaryCta: "Почни денес, бесплатна консултација <span class=\"arrow\">→</span>",
         secondaryCta: "Види ги резултатите",
         scroll: "Надолу"
       },
@@ -598,20 +598,20 @@
         rightHead: "✓ Со A2DW",
         leftRows: [
           "Трошеше на реклами, а продажбата не се помести.",
-          "Твојата агенција прикажува лајкови и reach — не приход.",
+          "Твојата агенција прикажува лајкови и reach, не приход.",
           "Не знаеш точно што работи, а што не.",
           "Буџетот излезе од сметката. Клиентите не дојдоа."
         ],
         rightRows: [
-          "Кампањи оптимизирани за конверзии — не за reach.",
+          "Кампањи оптимизирани за конверзии, не за reach.",
           "Секој месец прикажуваме ROAS, CPA и вистинска продажба.",
-          "Транспарентен dashboard — гледаш каде оди секој цент.",
+          "Транспарентен dashboard, гледаш каде оди секој цент.",
           "Системи што продолжуваат да продаваат и кога не си online."
         ]
       },
       services: {
         eyebrow: "Услуги",
-        title: "Секоја услуга има една цел —<br><em>да ја зголеми твојата продажба.</em>",
+        title: "Секоја услуга има една цел,<br><em>да ја зголеми твојата продажба.</em>",
         sub: "Не нудиме 'стандардни пакети'. Го градиме вистинскиот систем според твојот бизнис, таргет и буџет.",
         items: [
           {
@@ -671,9 +671,9 @@
       },
       about: {
         eyebrow: "За A2DW",
-        title: "Не сме агенција —<br>ние сме твој <em>партнер за продажба.</em>",
-        p1: "A2 Digital World е создаден затоа што бизнисите заслужуваат маркетинг што работи — не убави страници без резултат. Секоја кампања има една цел: да ја зголеми твојата продажба.",
-        p2: "Од Скопје, Северна Македонија, работиме со основачи и сопственици на мали и средни бизниси низ регионот што сакаат бројки што се движат — не vanity metrics.",
+        title: "Не сме агенција,<br>ние сме твој <em>партнер за продажба.</em>",
+        p1: "A2 Digital World е создаден затоа што бизнисите заслужуваат маркетинг што работи, не убави страници без резултат. Секоја кампања има една цел: да ја зголеми твојата продажба.",
+        p2: "Од Скопје, Северна Македонија, работиме со основачи и сопственици на мали и средни бизниси низ регионот што сакаат бројки што се движат, не vanity metrics.",
         cta: "Види што можеме да направиме за тебе <span class=\"arrow\">→</span>"
       },
       process: {
@@ -684,12 +684,12 @@
           {
             num: "01",
             title: "Аудит",
-            desc: "Го разгледуваме твојот бизнис, бројките и парите што веќе си ги потрошил — и ти кажуваме точно каде истекуваат."
+            desc: "Го разгледуваме твојот бизнис, бројките и парите што веќе си ги потрошил, и ти кажуваме точно каде истекуваат."
           },
           {
             num: "02",
             title: "Стратегија",
-            desc: "Позиционирање, понуда, канали, креативни агли, буџет и KPI — на хартија, одобрени пред да се потроши и едно евро."
+            desc: "Позиционирање, понуда, канали, креативни агли, буџет и KPI, на хартија, одобрени пред да се потроши и едно евро."
           },
           {
             num: "03",
@@ -706,16 +706,16 @@
       pricing: {
         eyebrow: "Цени",
         title: "Една почетна точка.<br><em>Една искрена бројка.</em>",
-        sub: "Без скриени трошоци. Без '12-месечни договори'. Го градиме вистинскиот план за твојот бизнис — и го зголемуваме како што растеш.",
+        sub: "Без скриени трошоци. Без '12-месечни договори'. Го градиме вистинскиот план за твојот бизнис, и го зголемуваме како што растеш.",
         caption: "Почнува од",
         amount: "350",
         period: "/месец",
-        lead: "Разговарај со нас — го градиме вистинскиот план за твојот бизнис, според индустријата, буџетот и целите.",
+        lead: "Разговарај со нас, го градиме вистинскиот план за твојот бизнис, според индустријата, буџетот и целите.",
         cta: "Земи бесплатна понуда <span class=\"arrow\">→</span>",
         features: [
           "Бесплатен 15-минутен стратегиски повик",
           "Транспарентно месечно известување",
-          "Live dashboard — ROAS, CPA, приход",
+          "Live dashboard, ROAS, CPA, приход",
           "Неделна оптимизација на кампањи",
           "Содржина направена за конверзии",
           "Без долгорочни договори"
@@ -724,38 +724,38 @@
       faq: {
         eyebrow: "Прашања",
         title: "Добри <em>прашања.</em><br>Искрени одговори.",
-        sub: "Ако твоето прашање не е тука, само пиши ни — одговараме во рок од 2 часа за време на работно време.",
+        sub: "Ако твоето прашање не е тука, само пиши ни, одговараме во рок од 2 часа за време на работно време.",
         cta: "Постави прашање <span class=\"arrow\">→</span>",
         items: [
           {
             q: "Колку време треба за да видам резултати?",
-            a: "Paid ads обично покажуваат сигнал за 2–3 недели. Organic и content се градат со време — значаен раст очекувај до ден 60–90. Од првиот ден добиваш live dashboard за да нема нагаѓање."
+            a: "Paid ads обично покажуваат сигнал за 2–3 недели. Organic и content се градат со време, значаен раст очекувај до ден 60–90. Од првиот ден добиваш live dashboard за да нема нагаѓање."
           },
           {
             q: "Дали работите и со помали буџети?",
-            a: "Да — почнуваме од €350/месец и растеме заедно со тебе. Ни треба реален производ, јасна понуда и подготвеност за тестирање. Имаме однесено бизниси од нула online приход до секојдневни резервации."
+            a: "Да, почнуваме од €350/месец и растеме заедно со тебе. Ни треба реален производ, јасна понуда и подготвеност за тестирање. Имаме однесено бизниси од нула online приход до секојдневни резервации."
           },
           {
             q: "На што точно известувате?",
-            a: "ROAS, CPA, генериран приход, cost per lead, conversion rates низ funnel — бројките што ги плаќаат сметките. Likes и reach се контекст, не KPI."
+            a: "ROAS, CPA, генериран приход, cost per lead, conversion rates низ funnel, бројките што ги плаќаат сметките. Likes и reach се контекст, не KPI."
           },
           {
             q: "Кој ја поседува содржината што ја произведувате?",
-            a: "Ти. Секој asset — raw footage, едитирано видео, ad creative, design files — е твој веднаш штом ќе биде одобрен. Без чудни лиценци и без заложени фајлови."
+            a: "Ти. Секој asset, raw footage, едитирано видео, ad creative, design files, е твој веднаш штом ќе биде одобрен. Без чудни лиценци и без заложени фајлови."
           },
           {
             q: "Можам ли да откажам кога сакам?",
-            a: "Да. Од месец за месец, со 30 дена најава. Подобро е да останеш затоа што работата е добра — не затоа што си заклучен во договор."
+            a: "Да. Од месец за месец, со 30 дена најава. Подобро е да останеш затоа што работата е добра, не затоа што си заклучен во договор."
           }
         ]
       },
       cta: {
         title: "Додај нов клиент<br>следниот месец. <em>Почни денес.</em>",
-        sub: "15 минути — и ќе ти кажеме точно што ти одзема продажба секој ден и како да го поправиш. Бесплатно, без обврска.",
+        sub: "15 минути, и ќе ти кажеме точно што ти одзема продажба секој ден и како да го поправиш. Бесплатно, без обврска.",
         button: "Резервирај бесплатна консултација <span class=\"arrow\">→</span>"
       },
       footer: {
-        brand: "A2 Digital World — реклами што продаваат, резултати што се гледаат. Создадено во Скопје, работи со бизниси низ целиот регион.",
+        brand: "A2 Digital World, реклами што продаваат, резултати што се гледаат. Создадено во Скопје, работи со бизниси низ целиот регион.",
         servicesHead: "Услуги",
         studioHead: "Студио",
         contactHead: "Контакт",
@@ -781,7 +781,7 @@
       },
       modal: {
         title: "Земи <em>бесплатна понуда.</em>",
-        lead: "15 минути — и ќе ти кажеме точно што ти одзема продажба секој ден и како да го поправиш. Бесплатно, без обврска.",
+        lead: "15 минути, и ќе ти кажеме точно што ти одзема продажба секој ден и како да го поправиш. Бесплатно, без обврска.",
         nameLabel: "Твоето име",
         namePlaceholder: "Име Презиме",
         emailLabel: "Е-пошта",
@@ -794,7 +794,7 @@
         budgetLabel: "Месечен ad буџет (€)",
         messageLabel: "Како можеме да помогнеме?",
         messagePlaceholder: "Кажи ни за твојот бизнис, целите и што си пробал досега.",
-        submit: "Испрати — одговараме во рок од 2 часа",
+        submit: "Испрати, одговараме во рок од 2 часа",
         note: "Со испраќање, се согласуваш да бидеш контактиран од A2DW. Никогаш не ги споделуваме твоите информации.",
         successTitle: "Твојата порака е <em>испратена.</em>",
         successLead: "Ќе одговориме во рок од 2 часа за време на работното време. Се слушаме наскоро.",
@@ -804,8 +804,8 @@
         popupCloseAria: "Затвори го popup-от за услуги",
         serviceOptions: {
           placeholder: "Избери услуга",
-          full: "Цел пакет — ми треба сè",
-          unsure: "Сè уште не сум сигурен — помогни ми да одлучам"
+          full: "Цел пакет, ми треба сè",
+          unsure: "Сè уште не сум сигурен, помогни ми да одлучам"
         },
         budgetOptions: [
           { value: "", label: "Избери опсег" },
@@ -832,7 +832,7 @@
         detailEmptyTitle: "Само финалните проекти ќе бидат објавени тука.",
         detailEmptyText: "Засега, старите примери се отстранети за портфолиото да остане чисто додека не бидеш подготвен за вистинската работа.",
         ctaTitle: "Твојот проект<br>може да биде <em>следен.</em>",
-        ctaSub: "15 минути — и ќе ти кажеме точно што ти одзема продажба секој ден и како да го поправиш. Бесплатно, без обврска.",
+        ctaSub: "15 минути, и ќе ти кажеме точно што ти одзема продажба секој ден и како да го поправиш. Бесплатно, без обврска.",
         ctaButton: "Земи бесплатна понуда <span class=\"arrow\">→</span>",
         contactFaq: "Чести прашања"
       }
@@ -1057,3 +1057,5 @@
 
   window.A2DWI18N = createAPI();
 })();
+
+
