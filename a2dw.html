@@ -11,10 +11,15 @@
 <meta property="og:site_name" content="A2 Digital World" />
 <meta property="og:title" content="A2 Digital World — Ads that sell. Results that show." />
 <meta property="og:description" content="A2 Digital World builds ad strategies that bring real customers — not just clicks and likes. Measurable results, every month." />
-<link rel="canonical" href="index.html" />
+<link rel="canonical" href="https://a2dw.com/" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<script>
+  if (window.location.pathname === '/index.html') {
+    window.history.replaceState({}, '', '/' + window.location.search + window.location.hash);
+  }
+</script>
 <style>
   :root {
     --bg: #ffffff;
@@ -655,7 +660,7 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="logo" aria-label="A2 Digital World home">
+    <a href="/" class="logo" aria-label="A2 Digital World home">
       <img class="logo-mark" src="assets/a2dw-logo.svg" alt="A2 Digital World" />
     </a>
     <div class="nav-links">
@@ -851,7 +856,7 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="index.html" class="logo" aria-label="A2 Digital World home">
+        <a href="/" class="logo" aria-label="A2 Digital World home">
           <img class="logo-mark" src="assets/a2dw-logo.svg" alt="A2 Digital World" />
         </a>
         <p data-i18n="footer.brand">A2 Digital World — ads that sell, results that show. Built in Skopje, working with businesses across the region.</p>
