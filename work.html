@@ -262,56 +262,60 @@
   }
   .intro-popup-backdrop.active { opacity: 1; pointer-events: auto; }
   .intro-popup {
-    position: relative; width: min(980px, 100%); max-height: min(90vh, 880px); overflow: auto;
-    border-radius: 28px; padding: clamp(28px, 4vw, 44px);
+    position: relative; width: min(1320px, calc(100vw - 48px)); overflow: hidden;
+    border-radius: 28px; padding: clamp(24px, 3vw, 34px);
     background: linear-gradient(180deg, #0f0f0f 0%, #151515 100%);
     color: #fff; border: 1px solid rgba(255,255,255,0.08);
     box-shadow: 0 30px 80px rgba(0,0,0,0.35);
   }
   .intro-popup-close {
-    position: absolute; top: 18px; right: 18px; width: 46px; height: 46px; border-radius: 50%;
+    position: absolute; top: 16px; right: 16px; width: 42px; height: 42px; border-radius: 50%;
     border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.04); color: #fff;
     display: inline-flex; align-items: center; justify-content: center; cursor: pointer;
-    font-size: 26px; line-height: 1; transition: all .2s ease;
+    font-size: 15px; font-weight: 700; line-height: 1; transition: all .2s ease;
   }
   .intro-popup-close:hover { background: #fff; color: var(--ink); border-color: #fff; }
+  .intro-popup-head {
+    display: flex; justify-content: space-between; align-items: flex-end; gap: 24px;
+    margin-bottom: 22px; padding-right: 56px;
+  }
   .intro-popup-eyebrow {
     font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #a0a0a0;
-    margin-bottom: 18px; display: inline-flex; align-items: center; gap: 10px;
+    margin-bottom: 12px; display: inline-flex; align-items: center; gap: 10px;
   }
   .intro-popup-eyebrow::before { content: ''; width: 24px; height: 1px; background: #666; }
   .intro-popup h2 {
     font-family: 'Instrument Serif', serif; font-weight: 400;
-    font-size: clamp(40px, 5vw, 68px); line-height: 0.98; letter-spacing: -1.5px;
-    max-width: 720px; margin-bottom: 16px;
+    font-size: clamp(34px, 4.2vw, 58px); line-height: 0.96; letter-spacing: -1.2px;
+    max-width: 640px; margin-bottom: 10px;
   }
   .intro-popup h2 em { font-style: italic; color: #8f8f8f; }
-  .intro-popup-lead { max-width: 660px; color: #b3b3b3; font-size: 17px; line-height: 1.7; }
-  .intro-popup-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 30px; }
+  .intro-popup-lead { max-width: 620px; color: #b3b3b3; font-size: 15px; line-height: 1.6; }
+  .intro-popup-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
   .intro-service-card {
-    border-radius: 20px; padding: 24px; min-height: 210px;
+    border-radius: 18px; padding: 18px; min-height: 168px;
     background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
     display: flex; flex-direction: column; justify-content: space-between;
   }
   .intro-service-code {
     display: inline-flex; align-items: center; justify-content: center;
-    min-width: 54px; height: 34px; border-radius: 999px;
+    min-width: 44px; height: 30px; border-radius: 999px;
     border: 1px solid rgba(255,255,255,0.12); color: #d9d9d9; font-size: 12px; letter-spacing: 2px;
   }
   .intro-service-num {
     font-family: 'Instrument Serif', serif; font-style: italic;
-    font-size: 15px; color: #7f7f7f; margin: 18px 0 10px;
+    font-size: 14px; color: #7f7f7f; margin: 16px 0 8px;
   }
   .intro-service-card h3 {
     font-family: 'Instrument Serif', serif; font-weight: 400;
-    font-size: 30px; line-height: 1.08; letter-spacing: -0.5px; margin-bottom: 12px;
+    font-size: 24px; line-height: 1.04; letter-spacing: -0.4px; margin-bottom: 10px;
   }
-  .intro-service-card p { color: #a7a7a7; font-size: 15px; line-height: 1.65; }
+  .intro-service-card p { color: #a7a7a7; font-size: 13px; line-height: 1.55; }
   .intro-popup-actions {
     display: flex; justify-content: space-between; align-items: center; gap: 16px;
-    margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.08);
   }
-  .intro-popup-note { color: #9f9f9f; font-size: 14px; max-width: 420px; }
+  .intro-popup-note { color: #9f9f9f; font-size: 13px; max-width: 420px; }
   .intro-popup .btn-primary { background: #fff; color: var(--ink); }
   .intro-popup .btn-primary:hover { background: #eaeaea; }
 
@@ -386,7 +390,9 @@
     .filters { position: relative; top: 0; }
     .modal-inner { padding: 36px 28px; }
     .form-row { grid-template-columns: 1fr; }
-    .intro-popup-grid { grid-template-columns: 1fr; }
+    .intro-popup-head { display: block; padding-right: 52px; }
+    .intro-popup-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .intro-service-card:last-child { grid-column: 1 / -1; }
     .intro-popup-actions { flex-direction: column; align-items: stretch; }
   }
   @media (max-width: 560px) {
@@ -404,9 +410,14 @@
     .filter-count { width: 100%; margin-left: 0; }
     .cta h2 { font-size: 44px; letter-spacing: -1px; }
     .footer-wordmark { font-size: 72px; letter-spacing: -4px; }
-    .intro-popup { padding: 24px 20px; border-radius: 22px; }
+    .intro-popup { width: min(100vw - 20px, 1320px); padding: 20px 16px; border-radius: 22px; }
     .intro-popup-close { top: 14px; right: 14px; }
-    .intro-popup h2 { font-size: clamp(34px, 11vw, 48px); }
+    .intro-popup h2 { font-size: 30px; }
+    .intro-popup-lead { font-size: 14px; }
+    .intro-popup-grid { gap: 10px; }
+    .intro-service-card { min-height: 144px; padding: 14px; }
+    .intro-service-card h3 { font-size: 20px; }
+    .intro-service-card p { font-size: 12px; }
     .intro-popup .btn { width: 100%; }
   }
 </style>
@@ -535,46 +546,58 @@
 <!-- INTRO POPUP -->
 <div class="intro-popup-backdrop" id="introPopup" aria-hidden="true">
   <div class="intro-popup" role="dialog" aria-modal="true" aria-labelledby="introPopupTitle">
-    <button type="button" class="intro-popup-close" id="introPopupClose" aria-label="Close services popup">×</button>
-    <div class="intro-popup-eyebrow">Our services</div>
-    <h2 id="introPopupTitle">Before you continue —<br><em>here's what we do.</em></h2>
-    <p class="intro-popup-lead">A quick overview of the services we use to grow sales, leads and stronger brands for businesses across the region.</p>
+    <button type="button" class="intro-popup-close" id="introPopupClose" aria-label="Close services popup">X</button>
+    <div class="intro-popup-head">
+      <div>
+        <div class="intro-popup-eyebrow">Our services</div>
+        <h2 id="introPopupTitle">Before you continue.<br><em>Here is what we do.</em></h2>
+        <p class="intro-popup-lead">A2DW focuses on five core services built around growth, conversions and stronger brand positioning.</p>
+      </div>
+    </div>
     <div class="intro-popup-grid">
       <div class="intro-service-card">
-        <div class="intro-service-code">ADS</div>
+        <div class="intro-service-code">01</div>
         <div>
-          <div class="intro-service-num">01 / Paid Ads</div>
-          <h3>Meta Ads &amp; Paid Advertising</h3>
-          <p>Campaigns built and optimized to bring real customers, not just clicks and reach.</p>
+          <div class="intro-service-num">Paid Ads</div>
+          <h3>Meta Ads</h3>
+          <p>Facebook and Instagram advertising, targeting, creatives and conversion campaigns for local and regional brands.</p>
         </div>
       </div>
       <div class="intro-service-card">
-        <div class="intro-service-code">SYS</div>
+        <div class="intro-service-code">02</div>
         <div>
-          <div class="intro-service-num">02 / Systems</div>
-          <h3>Marketing Systems</h3>
-          <p>Landing pages, funnels and automations that keep converting even when you're offline.</p>
+          <div class="intro-service-num">Brand</div>
+          <h3>Brand Strategy</h3>
+          <p>Brand repositioning, tone of voice, audience definition and competitive analysis for growth-ready businesses.</p>
         </div>
       </div>
       <div class="intro-service-card">
-        <div class="intro-service-code">CNT</div>
+        <div class="intro-service-code">03</div>
         <div>
-          <div class="intro-service-num">03 / Content</div>
-          <h3>Content That Converts</h3>
-          <p>Reels, stories and posts designed to move people from attention to action.</p>
+          <div class="intro-service-num">Content</div>
+          <h3>Video &amp; Reels</h3>
+          <p>Short-form video content, animated reels and brand story videos optimized for Instagram and TikTok.</p>
         </div>
       </div>
       <div class="intro-service-card">
-        <div class="intro-service-code">ID</div>
+        <div class="intro-service-code">04</div>
         <div>
-          <div class="intro-service-num">04 / Brand</div>
-          <h3>Graphic Design &amp; Branding</h3>
-          <p>Identity systems and visual materials that make the brand look clear, premium and ready to sell.</p>
+          <div class="intro-service-num">E-Commerce</div>
+          <h3>Store Growth</h3>
+          <p>Product launches, catalog ads, retargeting and Shopify store marketing for online brands.</p>
+        </div>
+      </div>
+      <div class="intro-service-card">
+        <div class="intro-service-code">05</div>
+        <div>
+          <div class="intro-service-num">Social</div>
+          <h3>Social Media</h3>
+          <p>Monthly planning, posting, community management and performance tracking for consistent growth.</p>
         </div>
       </div>
     </div>
     <div class="intro-popup-actions">
-      <p class="intro-popup-note">Close this popup with the `X`, or continue straight into the website.</p>
+      <p class="intro-popup-note">Close with the X, or continue straight into the website.</p>
       <button type="button" class="btn btn-primary" id="introPopupContinue">Continue to website <span class="arrow">→</span></button>
     </div>
   </div>
